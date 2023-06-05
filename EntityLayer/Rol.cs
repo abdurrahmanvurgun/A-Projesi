@@ -6,7 +6,7 @@ namespace Armut.Model
     {
         public int Id { get; set; }
         public string? Ad { get; set; }
-        public virtual IEnumerable<KullaniciRol> KullaniciRolleri { get; set; }
-        public virtual IEnumerable<Kullanici>? Kullanicilar { get; set; }
+        public virtual List<KullaniciRol> KullaniciRolleri { get; set; }
+        public virtual List<Kullanici> Kullanicilar { get; set; }
     }
 }

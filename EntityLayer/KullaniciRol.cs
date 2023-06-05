@@ -6,7 +6,7 @@ namespace Armut.Model
     {
         public int RolId { get; set; }
         public int KullaniciId { get; set; }
-        public virtual Kullanici? Kullanici { get; set; }
-        public virtual Rol? Rol { get; set; }
+        public virtual Kullanici Kullanici { get; set; }
+        public virtual Rol Rol { get; set; }
     }
 }
