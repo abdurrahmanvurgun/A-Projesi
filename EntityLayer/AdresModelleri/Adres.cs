@@ -15,7 +15,7 @@
         public int MahalleId { get; set; }
         public virtual Mahalle? Mahalle { get; set; }
         public int SemtId { get; set; }
-        
+
 
         public bool Visibility { get; set; }
 
