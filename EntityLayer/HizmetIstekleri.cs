@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    public class AltKategori
+    public class HizmetIstekleri
     {
         public int Id { get; set; }
-        public string Ad { get; set; }
-        public bool Aktif { get; set; }
-
-
-        //*****
-        public virtual Kategori Kategori { get; set; }
+        public int AktiviteId { get; set; }
+        public Aktivite Teklif { get; set; } 
+        public Kullanici Kullanici{ get; set; } 
     }
 }

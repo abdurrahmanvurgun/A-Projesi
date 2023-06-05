@@ -1,3 +1,5 @@
+using EntityLayer;
+
 namespace Armut.Model
 {
     public class Rol
