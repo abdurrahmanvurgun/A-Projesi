@@ -1,0 +1,99 @@
+﻿/* Modal Container */
+.ngb-modal-window {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Dialog */
+.modal-dialog {
+    position: relative;
+    margin: 10% auto;
+    max-width: 600px;
+    background-color: #fff;
+}
+
+/* Modal Content */
+.modal-content {
+    padding: 20px;
+}
+
+/* Modal Header */
+.ayva-modal__header {
+    position: relative;
+    text-align: center;
+}
+
+/* Modal Title */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Modal Close Button */
+.ayva-modal__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.ayva-modal__body {
+    padding: 20px;
+}
+
+/* Modal Footer */
+.ayva-modal__footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Custom Radio Buttons */
+.markable-elements {
+    display: block;
+    margin-bottom: 10px;
+}
+
+    .markable-elements input[type="radio"] {
+        margin-right: 5px;
+    }
+
+.checkmark {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+/* Price Container */
+.price__container {
+    margin-bottom: 20px;
+}
+
+    .price__container .text {
+        font-weight: bold;
+    }
+
+    .price__container strong {
+        font-size: 18px;
+    }
+
+.currency {
+    font-size: 14px;
+}
+
+body {
+    background-image: url("your-image.jpg");
+    background-color: green;
+    background-size: cover;
+}

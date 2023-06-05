@@ -3,6 +3,18 @@
 
 
 #btn-bg {
-    background-color: #348E38;
-    color:white;
+background-color: #348E38;
+color:white;
+}
+
+.blur {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width:100%;
+    text-align: center;
 }

@@ -15,30 +15,30 @@ namespace EntityLayer
     public class Aktivite //Teklif İsteği
     {
         public int Id { get; set; }
-        public decimal Fiyat { get; set; }
+
+        public string Baslik { get; set; }
 
         [StringLength(350)]
         public string? Mesaj { get; set; }
+        public decimal Fiyat { get; set; }
+
         public string? Resim { get; set; }
         public bool Gorunurluk { get; set; }
         public DateTime OlusturmaTarih { get; set; }
-       
-        public int AltKategoriId { get; set; }
-        public virtual AltKategori? AltKategori { get; set; }
-
-        public int AdresId { get; set; }
-        public Adres? Adres { get; set; }
-
-
-        //Teklif istenilen iş eklenicek
 
         //*************
+        public int AltKategoriId { get; set; }
+        public virtual AltKategori AltKategori { get; set; }
+        public int AdresId { get; set; }
+        public virtual Adres Adres { get; set; }
 
-  
+        //Teklif istenilen iş eklenicek
+        
+        public List<HizmetZamanTablosu> ZamanTablosu { get; set; }
         public virtual Kullanici TeklifIsteyen { get; set; }   // iş için teklif isteyen kullanıcı
         public virtual List<Kullanici> TeklifVeren { get; set; } //iş için teklif verenler
+        public virtual List<KullaniciRol> KullaniciRol { get; set; }
 
-        public virtual IEnumerable<KullaniciRol>? KullaniciRol { get; set; }
 
     }
 }

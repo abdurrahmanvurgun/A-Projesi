@@ -16,7 +16,7 @@ namespace Armut.Model
         
 
         //public virtual ýenumerable<useractivitytimetable>? attendantusers { get; set; }
-        public virtual List<Kullanici>? TumKatilimciSayisi {get; set; }
+        public virtual List<Kullanici> TumKatilimciSayisi {get; set; }
 
         public HizmetZamanTablosu()
         {

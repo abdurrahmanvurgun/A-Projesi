@@ -17,7 +17,7 @@ namespace EntityLayer
         public bool? Aktif { get; set; }
 
         public int KullaniciId { get; set; }
-        public virtual Kullanici? Kullanici { get; set; }
+        public virtual Kullanici Kullanici { get; set; }
 
     }
 }
