@@ -1,4 +1,6 @@
-﻿namespace Armut.Model
+﻿using EntityLayer;
+
+namespace Armut.Model
 {
     public class Adres
     {
@@ -19,6 +21,6 @@
 
         public bool Visibility { get; set; }
 
-        public virtual IEnumerable<Activity>? Activities { get; set; }
+        public virtual IEnumerable<Aktivite>? Activities { get; set; }
     }
 }
