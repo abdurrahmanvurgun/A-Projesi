@@ -10,7 +10,9 @@ namespace EntityLayer
     {
         public int Id { get; set; }
         public int AktiviteId { get; set; }
-        public Aktivite Teklif { get; set; } 
-        public Kullanici Kullanici{ get; set; } 
+        public virtual Aktivite Teklif { get; set; } 
+        public virtual Kullanici Kullanici{ get; set; } 
+
+
     }
 }

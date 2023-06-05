@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -46,13 +47,14 @@ namespace EntityLayer
         [StringLength(10)]
         public string Cinsiyet { get; set; }
 
-   
+
 
 
         //****************
-   
-      
-        public virtual Hesap Account { get; set; }
+        public virtual List<HizmetIstekleri> HizmetIstekleri { get; set; } //kullanıcının istediği hizmetler
+        public virtual List<Aktivite> OlusturulanHizmet { get; set; }
+        public int HesapId { get; set; }
+        public virtual Hesap Hesap { get; set; }
 
         public int CinsiyetId { get; set; }
         public virtual Cinsiyet Cinsiyeti { get; set;}
