@@ -23,4 +23,9 @@
 	  }
 	});
 
+	$("checkmark").click(function () {
+		$("checkmark").toggleClass("checked");
+
+	});
+
 })(jQuery);
