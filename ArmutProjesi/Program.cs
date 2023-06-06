@@ -1,3 +1,6 @@
+using DataAccessLayer;
+using Microsoft.EntityFrameworkCore;
+
 namespace ArmutProjesi
 {
     public class Program
@@ -8,6 +11,11 @@ namespace ArmutProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<DatabaseContext>(opt =>
+            {
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                //opt.UseLazyLoadingProxies(); baðlantýlý tablolar oldugunda kullanýlýyor.
+            });
 
             var app = builder.Build();
 

@@ -20,9 +20,13 @@ namespace EntityLayer
 
         public virtual List<AltKategori> AltKategoriler { get; set; }
 
+        public bool Gorunurluk { get; set; }
         public Kategori()
         {
             AltKategoriler = new List<AltKategori>();
         }
     }
 }
+
+//Test atışı........
+//Test atışı........222

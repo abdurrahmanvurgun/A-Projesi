@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Armut.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,33 +41,28 @@ namespace EntityLayer
         public bool Aktivate { get; set; }
         public DateTime KayıtTarihi { get; set; }
 
-        [StringLength(20), Required]
-        public string Role { get; set; }
-
         [StringLength(255)]
         public string ProfilImagefileName { get; set; }
 
         [StringLength(10)]
         public string Cinsiyet { get; set; }
 
-        [StringLength(255)]
-        public string Adres { get; set; }
-
-        [StringLength(50)]
-        public string İl { get; set; }
-        [StringLength(50)]
-        public string İlçe { get; set; }
 
 
 
         //****************
-        public virtual HizmetTipi HizmetTipi { get; set; }
-        public virtual List<Hizmet> Hizmetler {get; set;} //aldığı veya verdiği hizmetler
+        public virtual List<HizmetIstekleri> HizmetIstekleri { get; set; } //kullanıcının istediği hizmetler
+        public virtual List<Aktivite> OlusturulanHizmet { get; set; }
+        public int HesapId { get; set; }
+        public virtual Hesap Hesap { get; set; }
+
+        public int CinsiyetId { get; set; }
+        public virtual Cinsiyet Cinsiyeti { get; set;}
+        public virtual List<KullaniciRol> KullaniciRol { get; set; }
 
         public Kullanici()
         {
-            Hizmetler = new List<Hizmet>();
-
+            
         }
     }
 }

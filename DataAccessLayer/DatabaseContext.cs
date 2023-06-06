@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Armut.Model;
+using EntityLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,20 @@ namespace DataAccessLayer
 {
     public class DatabaseContext:DbContext
     {
+        public DatabaseContext(DbContextOptions options) : base(options)
+        {
+
+        }
+        public DbSet<Kullanici> Kullanicilar { get; set; }
+        public DbSet<Kategori> Kategoriler { get; set; }
+        public DbSet<AltKategori> AltKategoriler { get; set; }
+        public DbSet<Aktivite> Aktiviteler { get; set; }
+        public DbSet<Cinsiyet> Cinsiyetler { get; set; }
+        public DbSet<Hesap> Hesaplar { get; set; }
+        public DbSet<HizmetIstekleri> HizmetIstekleris { get; set; }
+        public DbSet<HizmetZamanTablosu> HizmetZamanTabloları { get; set; }
+        public DbSet<KullaniciRol> KullaniciRoller { get; set; }
+        public DbSet<Rol> Roller { get; set; }
+
     }
 }
