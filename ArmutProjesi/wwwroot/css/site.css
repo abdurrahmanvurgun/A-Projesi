@@ -18,3 +18,31 @@ color:white;
     width:100%;
     text-align: center;
 }
+#search{
+  width:25rem;
+  height:4rem;
+  padding:2px;
+  margin:0px;
+  border:3px solid #348E38;
+  font:1.5rem san-serif;
+  border-radius:0.5rem;
+}
+
+    #search:focus {
+        outline: none;
+        transform: scale(1.05);
+        border: 3px solid #ff6666;
+    }
+    #search:hover {
+        outline: none;
+        transform: scale(1.05);
+        border: 3px solid #ff6666;
+    }
+
+.label-ara{
+    border-radius:0.5rem;
+}
+    .label-ara:hover {
+        color: #ff6666;
+    }
+

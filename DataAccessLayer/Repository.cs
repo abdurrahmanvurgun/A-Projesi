@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class Repository<T>:Singleton,IRepository<T> where T:class
+    public class Repository<T>:IRepository<T> where T:class
     {
     }
 }

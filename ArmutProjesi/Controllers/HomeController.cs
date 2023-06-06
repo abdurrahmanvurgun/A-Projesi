@@ -18,10 +18,50 @@ namespace ArmutProjesi.Controllers
             return View();
         }
 
-        public IActionResult Index2()
+        public IActionResult Hakkimizda()
         {
             return View();
         }
+
+
+        public IActionResult Yardim()
+        {
+            return View();
+        }
+
+        public IActionResult Kategoriler()
+        {
+            return View();
+        }
+        public IActionResult Temizlik()
+        {
+            return View();
+        }
+        public IActionResult Tadilat()
+        {
+            return View();
+        }
+
+        public IActionResult OzelDers()
+        {
+            return View();
+        }
+
+        public IActionResult Saglik()
+        {
+            return View();
+        }
+
+        public IActionResult Diger()
+        {
+            return View();
+        }
+
+        public IActionResult Iletisim()
+        {
+            return View();
+        }
+
 
         public IActionResult Privacy()
         {
