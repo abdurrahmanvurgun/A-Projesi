@@ -34,13 +34,12 @@
     background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-    border: 3px solid var(--green);
+    border: 2px solid var(--green);
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 0;
     top:50%;
     left:50%;
-    width: 100%;
-  
+    width: 100%; 
     text-align: center;
 }
 
