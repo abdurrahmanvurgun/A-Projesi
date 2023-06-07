@@ -61,7 +61,10 @@ namespace ArmutProjesi.Controllers
         {
             return View();
         }
-
+        public IActionResult HizmetVer()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
