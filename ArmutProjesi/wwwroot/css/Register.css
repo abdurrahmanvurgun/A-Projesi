@@ -1,0 +1,25 @@
+﻿
+#btnkayıt {
+    width: 120px;
+    height: 50px;
+    background-color: yellowgreen;
+    color: white;
+    animation: mymove 2s infinite;
+    margin:auto;
+    
+}
+
+@keyframes mymove {
+    50% {
+        box-shadow: 5px 5px 5px green;
+    }
+}
+#iconkayıt {
+ /*   margin-left: 15rem;
+    margin-right:11rem;
+    margin-bottom:2rem;*/
+ margin:auto;
+}
+#bodykayıt{
+    padding-bottom:0;
+}
