@@ -52,7 +52,9 @@ namespace EntityLayer
 
         //****************
         public virtual List<HizmetIstekleri> HizmetIstekleri { get; set; } //kullanıcının istediği hizmetler
-        public virtual List<Aktivite> OlusturulanHizmet { get; set; }
+        
+        public virtual List<Aktivite> TeklifVern { get; set; }
+        public virtual List<Aktivite> TeklifAln { get; set; }
         public int HesapId { get; set; }
         public virtual Hesap Hesap { get; set; }
 

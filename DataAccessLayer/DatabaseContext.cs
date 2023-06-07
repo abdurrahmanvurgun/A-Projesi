@@ -25,6 +25,14 @@ namespace DataAccessLayer
         public DbSet<HizmetZamanTablosu> HizmetZamanTabloları { get; set; }
         public DbSet<KullaniciRol> KullaniciRoller { get; set; }
         public DbSet<Rol> Roller { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Aktivite>().HasOne(e => e.TeklifVeren).WithMany(e => e.TeklifVern).HasForeignKey(e => e.TeklifVerenId).OnDelete(DeleteBehavior.ClientSetNull);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Aktivite>().HasOne(e => e.TeklifIsteyen).WithMany(e => e.TeklifAln).HasForeignKey(e => e.TeklifAlanId).OnDelete(DeleteBehavior.ClientSetNull);
+
+        }
     }
 }

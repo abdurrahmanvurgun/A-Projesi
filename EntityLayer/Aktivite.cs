@@ -32,11 +32,16 @@ namespace EntityLayer
         public int AdresId { get; set; }
         public virtual Adres Adres { get; set; }
 
+        [Required]
+        public Guid TeklifVerenId { get; set; }
+        [Required]
+        public Guid TeklifAlanId { get; set; }
+
         //Teklif istenilen iş eklenicek
-        
+
         public List<HizmetZamanTablosu> ZamanTablosu { get; set; }
         public virtual Kullanici TeklifIsteyen { get; set; }   // iş için teklif isteyen kullanıcı
-        public virtual List<Kullanici> TeklifVeren { get; set; } //iş için teklif verenler
+        public virtual Kullanici TeklifVeren { get; set; } //iş için teklif verenler
         public virtual List<KullaniciRol> KullaniciRol { get; set; }
 
 
