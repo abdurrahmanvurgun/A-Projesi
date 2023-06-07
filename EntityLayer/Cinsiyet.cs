@@ -10,6 +10,7 @@ namespace EntityLayer
     {
         public int Id { get; set; }
         public string Cinsiyeti { get; set; }
+        public Guid KullaniciId { get; set; }
 
         public virtual List<Kullanici> Kullanicilar { get; set; }
     }

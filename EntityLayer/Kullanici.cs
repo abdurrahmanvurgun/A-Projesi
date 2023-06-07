@@ -48,11 +48,9 @@ namespace EntityLayer
         public string Cinsiyet { get; set; }
 
 
-
-
         //****************
-        public virtual List<HizmetIstekleri> HizmetIstekleri { get; set; } //kullanıcının istediği hizmetler
-        
+
+
         public virtual List<Aktivite> TeklifVern { get; set; }
         public virtual List<Aktivite> TeklifAln { get; set; }
         public int HesapId { get; set; }
@@ -60,7 +58,10 @@ namespace EntityLayer
 
         public int CinsiyetId { get; set; }
         public virtual Cinsiyet Cinsiyeti { get; set;}
-        public virtual List<KullaniciRol> KullaniciRol { get; set; }
+
+        public virtual List<HizmetZamanTablosu> HizmetZamanTablosu { get; set; }
+        public virtual KullaniciRol KullaniciRol { get; set; }
+        public virtual ICollection<Adres> Adresler { get; set; }
 
         public Kullanici()
         {

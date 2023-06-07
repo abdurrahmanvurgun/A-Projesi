@@ -1,12 +1,13 @@
 ﻿using EntityLayer;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Armut.Model
 {
     public class Adres
     {
         public int Id { get; set; }
-        public string? Ad { get; set; }
-        public string? Adres1 { get; set; }
+        public Guid KullaniciId { get; set; }
+        public string Adres1 { get; set; }
         public string? Adres2 { get; set; }
         public int UlkeId { get; set; }
         public virtual Ulke Ulke { get; set; }
@@ -15,12 +16,12 @@ namespace Armut.Model
         public int? IlceId { get; set; }
         public virtual Ilce Ilce { get; set; }
         public int MahalleId { get; set; }
+       
         public virtual Mahalle Mahalle { get; set; }
-        public int SemtId { get; set; }
-
 
         public bool Visibility { get; set; }
+        public virtual Kullanici Kullanici { get; set; }
 
-        public virtual List<Aktivite> Activiteler { get; set; }
+        public virtual Aktivite Activite { get; set; }
     }
 }

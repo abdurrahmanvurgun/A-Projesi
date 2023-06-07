@@ -21,7 +21,7 @@ namespace DataAccessLayer
         public DbSet<Aktivite> Aktiviteler { get; set; }
         public DbSet<Cinsiyet> Cinsiyetler { get; set; }
         public DbSet<Hesap> Hesaplar { get; set; }
-        public DbSet<HizmetIstekleri> HizmetIstekleris { get; set; }
+        public DbSet<Hizmetİstekleri> Hizmetİstekleri { get; set; }
         public DbSet<HizmetZamanTablosu> HizmetZamanTabloları { get; set; }
         public DbSet<KullaniciRol> KullaniciRoller { get; set; }
         public DbSet<Rol> Roller { get; set; }

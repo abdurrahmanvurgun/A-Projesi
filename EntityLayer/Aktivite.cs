@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Net;
@@ -14,8 +15,8 @@ namespace EntityLayer
 {
     public class Aktivite //Teklif İsteği
     {
+        [Key]
         public int Id { get; set; }
-
         public string Baslik { get; set; }
 
         [StringLength(350)]
@@ -40,7 +41,8 @@ namespace EntityLayer
         //Teklif istenilen iş eklenicek
 
         public List<HizmetZamanTablosu> ZamanTablosu { get; set; }
-        public virtual Kullanici TeklifIsteyen { get; set; }   // iş için teklif isteyen kullanıcı
+        
+        public virtual Kullanici TeklifIsteyen { get; set; } // iş için teklif isteyen kullanıcı
         public virtual Kullanici TeklifVeren { get; set; } //iş için teklif verenler
         public virtual List<KullaniciRol> KullaniciRol { get; set; }
 
