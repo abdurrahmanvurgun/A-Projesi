@@ -15,10 +15,11 @@ namespace EntityLayer.AdresModelleri
         public int Id { get; set; }
         public string Ad { get; set; }
         public int AdresId { get; set; }
-        public int SehirId { get; set; }
+        public int IlceId { get; set; }
+        [ForeignKey(nameof(IlceId))]
         public virtual Ilce Ilce { get; set; }
-        public bool Gorunurluk { get; set; }
-        [ForeignKey(nameof(AdresId))]
-        public virtual Adres Adres { get; set; }
+       
+        
+       
     }
 }

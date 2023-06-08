@@ -15,7 +15,8 @@ namespace EntityLayer.AdresModelleri
         public string Name { get; set; }
         public int AdresId { get; set; }
         public virtual ICollection<Il> Iller { get; set; }
-        [ForeignKey(nameof(AdresId))]
-        public virtual Adres Adres { get; set; }
+
+        
+       
     }
 }

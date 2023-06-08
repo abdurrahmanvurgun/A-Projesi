@@ -21,7 +21,7 @@ namespace DataAccessLayer
         public DbSet<AltKategori> AltKategoriler { get; set; }
         public DbSet<KullaniciRol> KullaniciRoller { get; set; }
         public DbSet<Rol> Roller { get; set; }
-        public DbSet<Adres> Adresler { get; set; }
+      
         public DbSet<Il> Iller { get; set; }
         public DbSet<Ilce> Ilceler { get; set; }
         public DbSet<Mahalle> Mahalleler { get; set; }

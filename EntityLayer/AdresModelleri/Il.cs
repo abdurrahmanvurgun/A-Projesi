@@ -21,7 +21,7 @@ namespace EntityLayer.AdresModelleri
         [ForeignKey(nameof(UlkeId))]
         public virtual Ulke Ulke { get; set; }
 
-        [ForeignKey(nameof(AdresId))]
-        public virtual Adres Adres { get; set; }
+        
+      
     }
 }
