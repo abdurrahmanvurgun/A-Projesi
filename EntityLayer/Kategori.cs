@@ -17,14 +17,12 @@ namespace EntityLayer
         [Required]
         [StringLength(250)]
         public string KategoriAdi { get; set; }
+        public bool Aktif { get; set; }
 
         public virtual List<AltKategori> AltKategoriler { get; set; }
 
-        public bool Gorunurluk { get; set; }
-        public Kategori()
-        {
-            AltKategoriler = new List<AltKategori>();
-        }
+       
+
     }
 }
 
