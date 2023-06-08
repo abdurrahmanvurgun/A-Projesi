@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityLayer.AdresModelleri;
 
 namespace DataAccessLayer
 {
@@ -18,9 +19,14 @@ namespace DataAccessLayer
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<AltKategori> AltKategoriler { get; set; }
-       
         public DbSet<KullaniciRol> KullaniciRoller { get; set; }
         public DbSet<Rol> Roller { get; set; }
+        public DbSet<Adres> Adresler { get; set; }
+        public DbSet<Il> Iller { get; set; }
+        public DbSet<Ilce> Ilceler { get; set; }
+        public DbSet<Mahalle> Mahalleler { get; set; }
+        public DbSet<Ulke> Ulkeler { get; set; }
+        
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
 

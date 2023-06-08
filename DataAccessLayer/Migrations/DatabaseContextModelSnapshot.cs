@@ -35,7 +35,7 @@ namespace DataAccessLayer.Migrations
                     b.HasIndex("KullaniciId")
                         .IsUnique();
 
-                    b.ToTable("KullaniciRoller");
+                    b.ToTable("KullaniciRoller", (string)null);
                 });
 
             modelBuilder.Entity("Armut.Model.Rol", b =>
@@ -52,7 +52,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roller");
+                    b.ToTable("Roller", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.AltKategori", b =>
@@ -78,7 +78,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("KategoriId");
 
-                    b.ToTable("AltKategoriler");
+                    b.ToTable("AltKategoriler", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Kategori", b =>
@@ -99,7 +99,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kategori");
+                    b.ToTable("Kategori", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Kullanici", b =>
@@ -149,7 +149,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kullanıcı");
+                    b.ToTable("Kullanıcı", (string)null);
                 });
 
             modelBuilder.Entity("Armut.Model.KullaniciRol", b =>
