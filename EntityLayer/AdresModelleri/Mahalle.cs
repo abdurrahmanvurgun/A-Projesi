@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.AdresModelleri
 {
+   
     public class Mahalle
     {
 
