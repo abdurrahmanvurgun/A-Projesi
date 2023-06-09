@@ -46,3 +46,19 @@ color:white;
         color: #ff6666;
     }
 
+#bg-login-img{
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:center;
+   
+ 
+}
+#ftco-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: 12.5rem;
+    margin-right: 12.5rem;
+    border: 1px solid #348E38;
+    background-color: rgb(52,142,56,0.2);
+}
+
