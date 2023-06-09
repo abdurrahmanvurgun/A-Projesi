@@ -19,7 +19,7 @@ namespace EntityLayer
 
         [Required]
         [StringLength(25)]
-        public string KullanıcıAdı { get; set; }
+        public string KullaniciAdi { get; set; }
 
         [MinLength(2), MaxLength(30)]
         public string? Ad { get; set; }
@@ -39,7 +39,7 @@ namespace EntityLayer
         [StringLength(25)]
         public string? TelefonNumarası { get; set; }
         public bool Aktivate { get; set; }
-        public DateTime KayıtTarihi { get; set; }
+        public DateTime KayitTarihi { get; set; }
 
         [StringLength(255)]
         public string ProfilImagefileName { get; set; }
