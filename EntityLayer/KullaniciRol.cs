@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Armut.Model
 {
+    [Table("Kullanýcý Rol")]
     public class KullaniciRol
     {
         [Key]

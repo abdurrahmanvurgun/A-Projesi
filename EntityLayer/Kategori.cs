@@ -17,7 +17,6 @@ namespace EntityLayer
         [Required]
         [StringLength(250)]
         public string KategoriAdi { get; set; }
-        public bool Aktif { get; set; }
 
         public virtual List<AltKategori> AltKategoriler { get; set; }
 
@@ -26,5 +25,3 @@ namespace EntityLayer
     }
 }
 
-//Test atışı........
-//Test atışı........222

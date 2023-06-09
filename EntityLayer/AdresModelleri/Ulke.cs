@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.AdresModelleri
 {
+    [Table("Ülke")]
     public class Ulke
     {
         [Key]
