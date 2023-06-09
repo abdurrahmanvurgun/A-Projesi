@@ -1983,9 +1983,9 @@ body {
     background: #fff;
     color: #404259;
     font-feature-settings: "kern";
-    -webkit-font-kerning: normal;
+    
     font-kerning: normal;
-    font-variant-ligatures: none;
+    
     font-variant-numeric: lining-nums;
     text-rendering: optimizeLegibility;
     font-size: 16px;
@@ -2334,8 +2334,7 @@ footer .footer-info {
     .modal-dialog-centered::before {
         display: block;
         height: calc(100vh - 1rem);
-        height: -webkit-min-content;
-        height: -moz-min-content;
+        
         height: min-content;
         content: ""
     }
@@ -2454,8 +2453,7 @@ footer .footer-info {
 
         .modal-dialog-centered::before {
             height: calc(100vh - 3.5rem);
-            height: -webkit-min-content;
-            height: -moz-min-content;
+            
             height: min-content
         }
 
@@ -2815,7 +2813,7 @@ footer .footer-info {
 }
 
 .align-self-auto {
-    -ms-grid-row-align: auto !important;
+   
     align-self: auto !important
 }
 
@@ -2828,7 +2826,7 @@ footer .footer-info {
 }
 
 .align-self-center {
-    -ms-grid-row-align: center !important;
+   
     align-self: center !important
 }
 
@@ -2837,7 +2835,7 @@ footer .footer-info {
 }
 
 .align-self-stretch {
-    -ms-grid-row-align: stretch !important;
+   
     align-self: stretch !important
 }
 
@@ -2955,7 +2953,7 @@ footer .footer-info {
     }
 
     .align-self-sm-auto {
-        -ms-grid-row-align: auto !important;
+        
         align-self: auto !important
     }
 
@@ -2968,7 +2966,7 @@ footer .footer-info {
     }
 
     .align-self-sm-center {
-        -ms-grid-row-align: center !important;
+        
         align-self: center !important
     }
 
@@ -2977,7 +2975,7 @@ footer .footer-info {
     }
 
     .align-self-sm-stretch {
-        -ms-grid-row-align: stretch !important;
+      
         align-self: stretch !important
     }
 }
@@ -3096,7 +3094,7 @@ footer .footer-info {
     }
 
     .align-self-md-auto {
-        -ms-grid-row-align: auto !important;
+        
         align-self: auto !important
     }
 
@@ -3109,7 +3107,7 @@ footer .footer-info {
     }
 
     .align-self-md-center {
-        -ms-grid-row-align: center !important;
+        
         align-self: center !important
     }
 
@@ -3118,7 +3116,7 @@ footer .footer-info {
     }
 
     .align-self-md-stretch {
-        -ms-grid-row-align: stretch !important;
+        
         align-self: stretch !important
     }
 }
@@ -3237,7 +3235,7 @@ footer .footer-info {
     }
 
     .align-self-lg-auto {
-        -ms-grid-row-align: auto !important;
+        
         align-self: auto !important
     }
 
@@ -3250,7 +3248,7 @@ footer .footer-info {
     }
 
     .align-self-lg-center {
-        -ms-grid-row-align: center !important;
+       
         align-self: center !important
     }
 
@@ -3259,7 +3257,7 @@ footer .footer-info {
     }
 
     .align-self-lg-stretch {
-        -ms-grid-row-align: stretch !important;
+       
         align-self: stretch !important
     }
 }
@@ -3378,7 +3376,7 @@ footer .footer-info {
     }
 
     .align-self-xl-auto {
-        -ms-grid-row-align: auto !important;
+      
         align-self: auto !important
     }
 
@@ -3391,7 +3389,7 @@ footer .footer-info {
     }
 
     .align-self-xl-center {
-        -ms-grid-row-align: center !important;
+        
         align-self: center !important
     }
 
@@ -3400,7 +3398,7 @@ footer .footer-info {
     }
 
     .align-self-xl-stretch {
-        -ms-grid-row-align: stretch !important;
+        
         align-self: stretch !important
     }
 }
@@ -3528,7 +3526,7 @@ footer .footer-info {
 
 @media (min-width:576px) {
     .benefits {
-        -ms-grid-columns: (350px)[3];
+       
         grid-template-columns: repeat(3,350px)
     }
 }
@@ -3569,14 +3567,14 @@ footer .footer-info {
 
 @media (max-width:767.98px) {
     .hero-proLanding .reach-container {
-        -ms-grid-columns: (1fr)[1];
+       
         grid-template-columns: repeat(1,1fr)
     }
 }
 
 @media (min-width:576px) and (max-width:991.98px) {
     .hero-proLanding .reach-container {
-        -ms-grid-columns: unset;
+        
         grid-template-columns: unset;
         display: block
     }
@@ -3584,14 +3582,14 @@ footer .footer-info {
 
 @media (min-width:768px) and (max-width:1199.98px) {
     .hero-proLanding .reach-container {
-        -ms-grid-columns: (15% 20%)[2];
+        
         grid-template-columns: repeat(2,15% 20%)
     }
 }
 
 @media (min-width:1200px) {
     .hero-proLanding .reach-container {
-        -ms-grid-columns: (18% 28% 42% 12%)[4];
+        
         grid-template-columns: repeat(4,18% 28% 42% 12%)
     }
 }
@@ -3714,9 +3712,9 @@ footer .footer-info {
     background-image: linear-gradient(180deg,rgba(0,0,0,0),#000);
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (15% 23% 24% 23% 15%)[5];
+   
     grid-template-columns: repeat(5,15% 23% 24% 23% 15%);
-    -ms-grid-rows: 102px 102px 102px;
+   
     grid-template-rows: 102px 102px 102px
 }
 
@@ -3761,7 +3759,7 @@ footer .footer-info {
 
 @media (max-width:991.98px) {
     .hero-proLanding--data {
-        -ms-grid-columns: (15% 35% 35% 15%)[4];
+        
         grid-template-columns: repeat(4,15% 35% 35% 15%)
     }
 
@@ -3999,7 +3997,7 @@ footer .footer-info {
     background-color: #f3f3f3;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (18% 32% 32% 18%)[4];
+   
     grid-template-columns: repeat(4,18% 32% 32% 18%)
 }
 
@@ -4046,16 +4044,16 @@ footer .footer-info {
     .usage-proLanding {
         margin-top: 0;
         padding-top: 0;
-        -ms-grid-rows: 45px;
+       
         grid-template-rows: 45px;
-        -ms-grid-columns: (1fr)[1];
+        
         grid-template-columns: repeat(1,1fr)
     }
 }
 
 @media (min-width:768px) and (max-width:1199.98px) {
     .usage-proLanding {
-        -ms-grid-columns: (50%)[2];
+       
         grid-template-columns: repeat(2,50%)
     }
 }
@@ -4492,7 +4490,7 @@ app-root-pro .pro-mask__input {
 }
 
 .swiper-slide {
-    -webkit-flex-shrink: 0;
+    
     -ms-flex-negative: 0;
     flex-shrink: 0;
     width: 100%;
@@ -5068,4 +5066,4 @@ button.swiper-pagination-bullet {
 
 .swiper-container-coverflow .swiper-wrapper {
     -ms-perspective: 1200px
-}s
+}
