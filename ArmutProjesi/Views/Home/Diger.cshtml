@@ -2,85 +2,128 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<div class="container-fluid w-50 h-30 bg-image">
-    <img src="/img/service-1.jpg" />   
-   
-</div>
+@*<div class="container-fluid w-50 h-30">
+    <img src="/img/service-1.jpg"/>
 
-<hr />
+</div>*@
+
 <div id="ContentPlaceHolder1_pnlOtherGroups">
-    <div class="container">
-        <div class="row offset-sm-2" style="color:#348E38;">
+    @*<form class="search-form" action="/search" method="GET">
+    <input type="text" name="query" placeholder="Arama yapın...">
+    <button type="submit">Ara</button>
+    </form>*@
+    @*<div class="row offset-sm-2" style="color:#348E38;">*@
+    <div class="row justify-content-center" style="color:#348E38;">
 
-            <div class="col-4">
-                <h3>Temizlik</h3>
-                <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Ev Temizliği</a>
-                <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Apartman Temizliği</a>
-                <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">İnşaat ev Temizliği</a>
-                <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Dükkan Temizliği</a>
-                <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Haşere İlaçlama</a>
-                <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Oto ve Araç Temizliği</a>
+        
+        <div class="carousel-item active">
+            <img src="/img/service-1.jpg" style="width: 2000px; height: 500px;" class="img-fluid" alt="Service Image" />
+            <div class="carousel-caption" style="background: rgba(15, 66, 41, .6);">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            
+                            <div style="margin-top: 250px;">
+                                <!-- İstenilen miktarda boşluk için margin-top stil özelliği eklendi -->
+                                <input id="search" type="search" placeholder="Aradığın hizmet burada" class="input-group-lg" autofocus />
+                                <label class="btn bg--primary py-sm-3 px-sm-4 label-ara">Hizmet Ara</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="col-4">
-                <h3>Tadilat</h3>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Boya/Badana</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Kapı</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Pencere</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Banyo Tadilat</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Duvar Örme</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Cam Balkon</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Zemin Döşeme</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Havuz Yapımı</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Gardrop Yapımı</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">İç Mimar</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">İç Mimar</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Mutfak Tadilat</a>
-                <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Koltuk Döşeme</a>
-            </div>
+        <div></div>
 
-            <div class="col-4">
-                <h3>Tamir</h3>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Kombi Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Mobilya Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Televizyon Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Bilgisayar Tamirit</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Telefon Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Beyaz Eşya Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Montaj</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Musluk Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Elektrik Tamiratı</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Pencere Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Klozet Tamiri</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Sıhhi Tesisat Tamiri</a>
-            </div>
+        <div class="col-4 text-center">
+            <h3>Temizlik</h3>
 
-            <div class="col-4">
-                <h3>Nakliyat</h3>
-                <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Evden Eve Nakliyat</a>
-                <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Şehirden Şehire Nakliyat</a>
-                <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Eşya Taşıma</a>
-                <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Yük Taşıyıcı Eleman</a>
-            </div>
-            <div class="col-4">
-                <h3>Diğer</h3>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Özel Ders</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Sağlık</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Organizasyon</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Fotoğraf ve Video</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Evcil Hayvanlar</a>
-                <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Oto ve Araç</a>               
-            </div>
-            <div class="col-4">
-                <h3>Özel Ders</h3>
-                <h3>Sağlık</h3>
-                <h3>Organizasyon</h3>
-                <h3>Foroğraf ve Video</h3>
-                <h3>Evcil Hayvanlar</h3>
-                <h3>Oto ve Araç</h3>
-            </div>
+            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Ev Temizliği</a>
+            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Apartman Temizliği</a>
+            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">İnşaat ev Temizliği</a>
+            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Dükkan Temizliği</a>
+            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Haşere İlaçlama</a>
+            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Oto ve Araç Temizliği</a>
+        </div>
+
+        <div class="col-4 text-center">
+            <h3>Tadilat</h3>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Boya/Badana</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Kapı</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Pencere</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Banyo Tadilat</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Duvar Örme</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Cam Balkon</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Zemin Döşeme</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Havuz Yapımı</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Gardrop Yapımı</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">İç Mimar</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">İç Mimar</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Mutfak Tadilat</a>
+            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Koltuk Döşeme</a>
+        </div>
+
+        <div class="col-4 text-center">
+            <h3>Tamir</h3>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Kombi Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Mobilya Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Televizyon Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Bilgisayar Tamirit</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Telefon Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Beyaz Eşya Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Montaj</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Musluk Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Elektrik Tamiratı</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Pencere Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Klozet Tamiri</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Sıhhi Tesisat Tamiri</a>
+        </div>
+
+        <div class="col-4 text-center">
+            <h3>Nakliyat</h3>
+            <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Evden Eve Nakliyat</a>
+            <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Şehirden Şehire Nakliyat</a>
+            <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Eşya Taşıma</a>
+            <a asp-controller="Home" asp-action="Nakliyat" class="dropdown-item">Yük Taşıyıcı Eleman</a>
+        </div>
+        <div class="col-4 text-center">
+            <h3>Diğer</h3>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Özel Ders</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Sağlık</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Organizasyon</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Fotoğraf ve Video</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Evcil Hayvanlar</a>
+            <a asp-controller="Home" asp-action="Tamir" class="dropdown-item">Oto ve Araç</a>
+        </div>
+        <div class="col-4 text-center">
+            <h3>Özel Ders</h3>
+            <h3>Sağlık</h3>
+            <h3>Organizasyon</h3>
+            <h3>Foroğraf ve Video</h3>
+            <h3>Evcil Hayvanlar</h3>
+            <h3>Oto ve Araç</h3>
         </div>
     </div>
 </div>
+</div>
 
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
 
