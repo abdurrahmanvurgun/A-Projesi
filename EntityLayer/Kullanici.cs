@@ -18,53 +18,41 @@ namespace EntityLayer
         public Guid Id { get; set; }
 
         [Required]
-        [StringLength(25)]
-        public string KullanıcıAdı { get; set; }
+        [StringLength(50)]
+        public string KullaniciAdi { get; set; }
 
         [MinLength(2), MaxLength(30)]
         public string? Ad { get; set; }
-
-
-        [MinLength(2), MaxLength(30)]
+        [StringLength(30)]
         public string? Soyad { get; set; }
-
-        [Required, StringLength(50)]
+        [StringLength(100), Required]
         public string Email { get; set; }
+       
+        [StringLength(250), Required]
+        public string Sifre { get; set; }
+        [MinLength(6), MaxLength(16)]
+        [Compare(nameof(Sifre))]
+        public string Sifre2 { get; set; }
+        public string Adres { get; set; }
+        public string? Adres2 { get; set; }
 
-        [Required, MinLength(6), MaxLength(250)]
-        public string Pasword { get; set; }
-
-        public DateTime DogumTarihi { get; set; }
-
-        [StringLength(25)]
-        public string? TelefonNumarası { get; set; }
-        public bool Aktivate { get; set; }
-        public DateTime KayıtTarihi { get; set; }
-
-        [StringLength(255)]
-        public string ProfilImagefileName { get; set; }
-
-        [StringLength(10)]
+        [StringLength(5), Required]
         public string Cinsiyet { get; set; }
 
+        public bool Aktif { get; set; }
 
+        [StringLength(25)]
+        public string TelefonNumarası { get; set; }
+       
+        public DateTime KayitTarihi { get; set; }
 
-
-        //****************
-        public virtual List<HizmetIstekleri> HizmetIstekleri { get; set; } //kullanıcının istediği hizmetler
-        
-        public virtual List<Aktivite> TeklifVern { get; set; }
-        public virtual List<Aktivite> TeklifAln { get; set; }
-        public int HesapId { get; set; }
-        public virtual Hesap Hesap { get; set; }
-
-        public int CinsiyetId { get; set; }
-        public virtual Cinsiyet Cinsiyeti { get; set;}
-        public virtual List<KullaniciRol> KullaniciRol { get; set; }
-
-        public Kullanici()
-        {
-            
-        }
+        public virtual KullaniciRol KullaniciRol { get; set; }
     }
+
+
+    //****************
+
+
+
 }
+
