@@ -1,8 +1,90 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Profile";
     Layout = "~/Views/Shared/_ProfileLayout.cshtml";
 }
 
-<h1>Profile</h1>
+
+
+<div class="container lb-disable-scrolling">
+    <main class="row">
+        <div class="col-12">
+            <h2> Aylık Ödeme Bilgileriniz</h2>
+        </div>
+        <div class="col-12">
+            <div class="py-2 text-center">
+                <img class="d-block mx-auto mb-4 figure-img" src="~/img/profile-bg.svg" alt="Profil Resmi" width="200" height="200">
+                <h2>Profil Ayarlarınız</h2>
+            </div>
+            <div class="row g-5">
+                <div class="offset-sm-3 col-md-7">
+
+                    <form class="needs-validation" method="post" novalidate>
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                <label for="firstName" class="form-label">Adınız</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Adınız" value="" required>
+                                <div class="invalid-feedback">
+                                    Ad alanı boş bırakılamaz.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="lastName" class="form-label">Soyadınız</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Soyadı alanı boş bırakılamaz.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                <div class="invalid-feedback">
+                                    Lütfen Mail adrsinizi doğru giriniz.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="password" class="form-label">Eski Şifreniz</label>
+                                <input type="password" class="form-control" id="password" placeholder="***">
+                                <div class="invalid-feedback">
+                                    Lütfen Eski Şifrenizi doğru giriniz.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="password" class="form-label">Yeni Şifre</label>
+                                <input type="password" class="form-control" id="password" placeholder="">
+                                <div class="invalid-feedback">
+                                    Lütfen yeni Şifrenizi doğru giriniz.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="password" class="form-label">Yeni Şifre Tekrarı</label>
+                                <input type="password" class="form-control" id="password" placeholder="">
+                                <div class="invalid-feedback">
+                                    Lütfen yeni Şifrenizi doğru giriniz.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Adresiniz</label>
+                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                <div class="invalid-feedback">
+                                    Lütfen adres alanını doldurunuz.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-success w-100 btn-lg-square" type="submit"> Kaydet </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<script src="~/js/form-validation.js"></script>
+
 

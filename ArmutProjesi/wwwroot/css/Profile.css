@@ -14,7 +14,7 @@ body {
 
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 5rem;
   /* rtl:raw:
   right: 0;
   */
@@ -43,12 +43,13 @@ body {
 
 .sidebar .nav-link {
   font-weight: 500;
-  color: #333;
+  color: white;
+  font-size:larger;
 }
 
 .sidebar .nav-link .feather {
   margin-right: 4px;
-  color: #727272;
+  color: white;
 }
 
 .sidebar .nav-link.active {
@@ -88,13 +89,16 @@ body {
   border-radius: 0;
 }
 
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
-.form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }

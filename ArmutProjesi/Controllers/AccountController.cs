@@ -17,10 +17,21 @@ namespace ArmutProjesi.Controllers
             return View();
         }
 
-        public IActionResult Profile()
+        public IActionResult Profile() // Profil sayfası
         {
             return View();
         }
-
+        public IActionResult ProfileSetting() // Profil ayarları
+        {
+            return View();
+        }
+        public IActionResult ServiceSettings() // Service ayarları
+        {
+            return View();
+        }
+        public IActionResult Wallet() // Cüzdan  ayarları
+        {
+            return View();
+        }
     }
 }
