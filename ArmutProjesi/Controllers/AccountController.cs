@@ -33,5 +33,13 @@ namespace ArmutProjesi.Controllers
         {
             return View();
         }
+        public IActionResult Jobs() // işlerim
+        {
+            return View();
+        }
+        public IActionResult services() // servislerim
+        {
+            return View();
+        }
     }
 }
