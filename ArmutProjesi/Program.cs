@@ -1,3 +1,4 @@
+using ArmutProjesi.Hubs;
 using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,12 @@ namespace ArmutProjesi
                 //opt.UseLazyLoadingProxies(); baðlantýlý tablolar oldugunda kullanýlýyor.
             });
 
+            builder.Services.AddRazorPages();
+            builder.Services.AddSignalR();
+            
             var app = builder.Build();
+
+            
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -37,7 +43,7 @@ namespace ArmutProjesi
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
+            app.MapHub<ChatHub>("/chatHub");
             app.Run();
         }
     }
