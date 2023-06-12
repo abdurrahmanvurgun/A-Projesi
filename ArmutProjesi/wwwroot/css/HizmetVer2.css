@@ -905,14 +905,14 @@
 
 @media (min-width:576px) {
     .hero-proLanding {
-        background-image: url(https://cdn.armut.com/images/HV/pro-onboarding-img-1.jpg);
+        
         height: 688px
     }
 }
 
 @media (max-width:767.98px) {
     .hero-proLanding {
-        background-image: url(https://cdn.armut.com/images/HV/pro-onboarding-img-1-mobile@2x.jpg);
+      
         max-height: 570px
     }
 }
@@ -945,7 +945,8 @@
 
 @media (min-width:1200px) {
     .hero-proLanding .reach-container {
-        grid-template-columns: repeat(4,18% 28% 42% 12%)
+        grid-template-columns: repeat(4,28% 28% 42% 12%);
+        
     }
 }
 
@@ -953,10 +954,12 @@
     width: 622px;
     padding: 36px;
     -ms-grid-column: 3;
-    grid-column-start: 3;
+    grid-column-start: auto;
     -ms-grid-row: 1;
     grid-row: 1;
-    z-index: 100
+    z-index: 100;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
     .hero-proLanding--reach p {
@@ -1192,157 +1195,7 @@
     }
 }
 
-@media (max-width:767.98px) {
-    .video-pro-landing--big {
-        margin-bottom: 115px
-    }
 
-        .video-pro-landing--big h4 {
-            color: #404259;
-            font-size: 14px
-        }
-
-        .video-pro-landing--big p {
-            color: #6e7081;
-            font-size: 12px;
-            margin-bottom: 9px
-        }
-}
-
-@media (max-width:380px) {
-    .video-pro-landing--big {
-        margin-bottom: 135px
-    }
-}
-
-.video-pro-landing--big__img, .video-pro-landing--small__img {
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
-.video-pro-landing--small {
-    width: 100%;
-    margin-bottom: 16px
-}
-
-    .video-pro-landing--small h4 {
-        font-size: 14px;
-        margin-bottom: 9px
-    }
-
-    .video-pro-landing--small p {
-        color: #6e7081;
-        font-size: 12px;
-        margin-bottom: 9px
-    }
-
-.video-pro-landing--small__img {
-    min-height: 200px;
-    position: relative
-}
-
-@media (min-width:768px) {
-    .video-pro-landing--small__img {
-        min-height: 160px;
-        height: 160px
-    }
-}
-
-@media (min-width:768px) {
-    .video-pro-landing--small {
-        width: 32.5%
-    }
-}
-
-.video-pro-landing--title {
-    margin-top: 80px;
-    text-align: center
-}
-
-@media (max-width:991.98px) {
-    .video-pro-landing--title {
-        margin: 40px auto 40px;
-        padding: 0 60px
-    }
-}
-
-@media (max-width:991.98px) {
-    .video-pro-landing {
-        padding: 0 24px
-    }
-}
-
-.why-armut {
-    text-align: center;
-    margin: 104px 0
-}
-
-    .why-armut .video-openner {
-        background-image: url(https://cdn.armut.com/images/HV/neden-armut.jpg);
-        background-size: cover;
-        position: relative;
-        height: 240px;
-        width: 100%
-    }
-
-@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) {
-    .why-armut .video-openner {
-        background-image: url(https://cdn.armut.com/images/HV/neden-armut@2x.jpg)
-    }
-}
-
-@media (max-width:991.98px) {
-    .why-armut .video-openner {
-        width: 100%
-    }
-}
-
-@media (max-width:991.98px) {
-    .why-armut {
-        margin: 16px 0
-    }
-}
-
-.why-armut .order-md-first {
-    position: relative
-}
-
-    .why-armut .order-md-first::after {
-        width: 240px;
-        height: 240px;
-        border-radius: 50%;
-        content: "";
-        display: block;
-        position: absolute;
-        top: -75px;
-        right: -100px;
-        background-color: #f3f3f3;
-        z-index: -1
-    }
-
-@media (max-width:767.98px) {
-    .why-armut .order-md-first::after {
-        display: none
-    }
-}
-
-.video-proLanding p {
-    font-size: 14px;
-    color: #9fa0ab;
-    margin-bottom: 0
-}
-
-.video-proLanding h3 {
-    margin-bottom: 8px
-}
-
-.video-proLanding a {
-    color: #fff
-}
-
-    .video-proLanding a:hover {
-        color: #fff
-    }
 
 .usage-proLanding {
     padding: 49px 0 22px;
@@ -1541,7 +1394,7 @@
 }
 
 .gain-proLanding .swiper-button-next, .gain-proLanding .swiper-button-prev {
-    top: 56.5%;
+    /*top: 56.5%;*/
     width: 46px;
     height: 46px;
     background-color: #fff;
@@ -1618,67 +1471,6 @@
         }
 }
 
-.icon__youtube {
-    height: 48px;
-    width: 68px;
-    background-image: url(https://cdn.armut.com/images/HV/icn-youtube-play-default-copy.png);
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat
-}
-
-@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) {
-    .icon__youtube {
-        background-image: url(https://cdn.armut.com/images/HV/icn-youtube-play-default-copy@2x.png)
-    }
-}
-
-@media (max-width:767.98px) {
-    .icon__youtube {
-        background-image: url(https://cdn.armut.com/images/HV/icn-youtube-play-hover.png)
-    }
-}
-
-@media (max-width:767.98px) and (-webkit-min-device-pixel-ratio:2),(max-width:767.98px) and (min-resolution:192dpi) {
-    .icon__youtube {
-        background-image: url(https://cdn.armut.com/images/HV/icn-youtube-play-hover@2x.png)
-    }
-}
-
-.video-openner {
-    cursor: pointer
-}
-
-    .video-openner .icon__youtube {
-        position: absolute;
-        top: 50%;
-        margin-top: -24px;
-        left: 50%;
-        margin-left: -34px
-    }
-
-    .video-openner:hover .icon__youtube {
-        background-image: url(https://cdn.armut.com/images/HV/icn-youtube-play-hover.png)
-    }
-
-@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) {
-    .video-openner:hover .icon__youtube {
-        background-image: url(https://cdn.armut.com/images/HV/icn-youtube-play-hover@2x.png)
-    }
-}
-
-#video-container {
-    width: 610px;
-    height: 425px;
-    overflow: hidden;
-    margin: 0 auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -305px;
-    margin-top: -212px;
-    z-index: 1041
-}
 
 .modal-backdrop.in {
     background-color: #000
@@ -1840,7 +1632,7 @@ app-root-pro .pro-mask__input {
 
 .swiper-slide {
     -ms-flex-negative: 0;
-    flex-shrink: 0;
+    /*flex-shrink: 0;*/
     width: 100%;
     height: 100%;
     position: relative;
