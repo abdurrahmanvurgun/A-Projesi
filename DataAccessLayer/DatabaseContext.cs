@@ -71,6 +71,16 @@ namespace DataAccessLayer
                 entity.Property(e => e.Aktif);
                 entity.HasOne(e => e.Kategori).WithMany(e => e.AltKategoriler).HasForeignKey(e => e.KategoriId);
             });
+
+            modelBuilder.Entity<Soru>(entity =>
+            {
+                entity.HasKey(e => new { e.SoruId, e.AltKategoriId });
+                entity.Property(e => e.Sorular);
+                entity.HasOne(e => e.AltKategori).WithMany(e => e.Sorular).HasForeignKey(e => e.AltKategoriId);
+            });
+
+
+
             modelBuilder.Entity<Kullanici>(entity =>
             {
                 entity.HasKey(e => new { e.Id });
@@ -149,7 +159,7 @@ namespace DataAccessLayer
                     new Rol
                     {
                         Id =1,
-                        Ad = "User"
+                        Ad = "Admin"
                     },
                     new Rol
                     {
@@ -246,12 +256,14 @@ namespace DataAccessLayer
         void AddDataToAltKategori(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AltKategori>().HasData(
+
                    new AltKategori
                    {
                        Id = 1,
                        AltKategoriAdi = "Apartman Temizliği",
                        KategoriId = 1,
-                       Aktif = true
+                       Aktif = true,
+                       
                    },
                     new AltKategori
                     {
@@ -4660,8 +4672,190 @@ namespace DataAccessLayer
                               Aktif = true
                           });
             }
-        
 
+        void AddDataToSoru(ModelBuilder modelBuilder)
+
+        {
+            modelBuilder.Entity<Soru>().HasData(
+                //Ev temizliği
+                      new Soru
+                      {
+                          SoruId=1,
+                          AltKategoriId=10,
+                          Sorular="Evin Büyüklüğü"
+                      }, 
+                      new Soru
+                      {
+                          SoruId=2,
+                          AltKategoriId=10,
+                          Sorular="Banyo Sayısı"
+                      },
+                      new Soru
+                      {
+                          SoruId=3,
+                          AltKategoriId=10,
+                          Sorular="Kaç Saat"
+                      },
+                      new Soru
+                      {
+                          SoruId=4,
+                          AltKategoriId=10,
+                          Sorular="Hangi Sıklık"
+                      },
+                      new Soru
+                      {
+                          SoruId=5,
+                          AltKategoriId=10,
+                          Sorular="Ek Hizmet"
+                      },
+                      new Soru
+                      {
+                          SoruId=5,
+                          AltKategoriId=10,
+                          Sorular="Konum"
+                      },
+                      new Soru
+                      {
+                          SoruId=5,
+                          AltKategoriId=10,
+                          Sorular="Detay"
+                      },
+                      /////Apartman Temizliği
+                      ///
+                      new Soru
+                      {
+                          SoruId =6,
+                          AltKategoriId = 1,
+                          Sorular = "Daire Sayısı"
+                      }, 
+                      new Soru
+                      {
+                          SoruId =7,
+                          AltKategoriId = 1,
+                          Sorular = "Çöp Toplansın mı"
+                      }, 
+                      new Soru
+                      {
+                          SoruId =8,
+                          AltKategoriId = 1,
+                          Sorular = "Hangi Sıklık"
+                      }, 
+                      new Soru
+                      {
+                          SoruId =9,
+                          AltKategoriId = 1,
+                          Sorular = "Konum"
+                      },
+                      new Soru
+                      {
+                          SoruId =10,
+                          AltKategoriId = 1,
+                          Sorular = "Detay"
+                      },
+                      ///Ofis Temizliği
+                      new Soru
+                      {
+                          SoruId = 11,
+                          AltKategoriId = 27,
+                          Sorular = "Hangi Sıklık"
+                      },
+                      new Soru
+                      {
+                          SoruId = 12,
+                          AltKategoriId = 27,
+                          Sorular = "Kaç Metrekare"
+                      },
+                      new Soru
+                      {
+                          SoruId = 13,
+                          AltKategoriId = 27,
+                          Sorular = "Konum"
+                      },new Soru
+                      {
+                          SoruId = 14,
+                          AltKategoriId = 27,
+                          Sorular = "Detay"
+                      },
+                      ////İnşaat sonrası ev temizliği
+                      new Soru
+                      {
+                          SoruId = 15,
+                          AltKategoriId = 17,
+                          Sorular = "Evin Büyüklüğü"
+                      }, new Soru
+                      {
+                          SoruId = 16,
+                          AltKategoriId = 17,
+                          Sorular = "Banyo Sayısı"
+                      }, new Soru
+                      {
+                          SoruId = 17,
+                          AltKategoriId = 17,
+                          Sorular = "Kaç Metrekare"
+                      }, new Soru
+                      {
+                          SoruId = 17,
+                          AltKategoriId = 17,
+                          Sorular = "Konum"
+                      }, new Soru
+                      {
+                          SoruId = 18,
+                          AltKategoriId = 17,
+                          Sorular = "Detay"
+                      },
+                       //////Dükkan Mağaza Temizliği
+                       ///
+                       new Soru
+                       {
+                           SoruId = 19,
+                           AltKategoriId = 8,
+                           Sorular = "Dükkan Büyüklüğü"
+                       }, new Soru
+                       {
+                           SoruId = 20,
+                           AltKategoriId = 8,
+                           Sorular = "Hangi Sıklık"
+                       }, new Soru
+                       {
+                           SoruId = 21,
+                           AltKategoriId = 8,
+                           Sorular = "Konum"
+                       }, new Soru
+                       {
+                           SoruId = 22,
+                           AltKategoriId = 8,
+                           Sorular = "Detay"
+                       },
+                       //////Haşere İlaçlama
+                       new Soru
+                       {
+                           SoruId = 23,
+                           AltKategoriId = 16,
+                           Sorular = "Haşere Tipi"
+                       },new Soru
+                       {
+                           SoruId = 24,
+                           AltKategoriId = 16,
+                           Sorular = "Alan Büyüklüğü"
+                       },new Soru
+                       {
+                           SoruId = 25,
+                           AltKategoriId = 16,
+                           Sorular = "Mekan Tipi"
+                       },new Soru
+                       {
+                           SoruId = 26,
+                           AltKategoriId = 16,
+                           Sorular = "Konum"
+                       },new Soru
+                       {
+                           SoruId = 27,
+                           AltKategoriId = 16,
+                           Sorular = "Detay"
+                       }
+
+                      );
+        }
 
 
     }

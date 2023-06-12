@@ -22,5 +22,7 @@ namespace EntityLayer
 
         //*****
         public virtual Kategori Kategori { get; set; }
+        public virtual List<Soru> Sorular { get; set; }
+
     }
 }
