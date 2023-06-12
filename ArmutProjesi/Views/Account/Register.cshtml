@@ -1,20 +1,26 @@
 ﻿<link href="~/css/register.css" rel="stylesheet" />
 
+  <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
 <div class="container d-flex justify-content-center align-items-center vh-100" id="bodykayıt">
-    <form class="border border-success border-rounded w-75 h-75 " >
+    <form >
+        <h3>Kayıt Olun</h3>
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row m-4">
                 <div class="col">
                     <div class="form-outline">
                         <label class="form-label" for="form3Example1">İsminiz</label>
-                        <input type="text" id="form3Example1" class="form-control" />
+                        <input type="text" id="isim" placeholder="İsminiz" />
 
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-outline">
                         <label class="form-label" for="form3Example2">Soyisminiz</label>
-                        <input type="text" id="form3Example2" class="form-control" />
+                    <input type="text" id="soyisim" placeholder="Soyisminiz" />
 
                     </div>
                 </div>
@@ -23,44 +29,48 @@
             <!-- Email input -->
             <div class="form-outline m-4">
                 <label class="form-label" for="form3Example3">Email Adres</label>
-                <input type="email" id="form3Example3" class="form-control" />
+            <input type="email" id="email" placeholder="E-Mail" />
 
             </div>
 
             <!-- Password input -->
             <div class="form-outline m-4">
                 <label class="form-label" for="form3Example4">Şifre</label>
-                <input type="password" id="form3Example4" class="form-control" style="padding-right:2px;" />
+            <input type="password" id="sifre" placeholder="sifre" style="padding-right:2px;" />
 
             </div>
 
-            @* <!-- Checkbox -->
+             <!-- Checkbox -->
             <div class="form-check d-flex justify-content-center mb-4">
             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
             <label class="form-check-label" for="form2Example33">
             Haber Bültenimize Abone Ol
             </label>
             </div>
-            *@
+            
             <!-- Submit button -->
-        <div class="row" id="btnkayıt">           
+       <div class="row" id="btnkayıt">           
                 <button type="submit" class="btn btn-block mb-4 " style="">Kayıt Ol</button>                
             </div>
             
 
             <!-- Register buttons -->
+            <div class="text-center">
+            <p>or sign up with:</p>
+            </div>
             <div class="text-center" id="iconkayıt">
-                <p>or sign up with:</p>
+              
+            <br /><br />
                 <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <i class="fab fa-facebook-f"></i>
+                    <div class="fab fa-facebook-f"></div>
                 </button>
 
                 <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <i class="fab fa-google"></i>
+                    <div class="fab fa-google"></div>
                 </button>
 
                 <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <i class="fab fa-twitter"></i>
+                    <div class="fab fa-twitter"></div>
                 </button>
 
 
@@ -69,3 +79,6 @@
     </div>
 
 
+  
+
+    
