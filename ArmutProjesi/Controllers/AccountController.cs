@@ -6,13 +6,18 @@ namespace ArmutProjesi.Controllers
     {
         public IActionResult Login()//Giriş 
         {
-            return View();
+            return RedirectToAction("Account", "Profile");
         }
         public IActionResult Register()//Kayıt OL
         {
             return View();
         }
         public IActionResult UpdatePassword()//Şifre Yenileme ya da Şifremi Unuttum
+        {
+            return View();
+        }
+
+        public IActionResult Profile()
         {
             return View();
         }
