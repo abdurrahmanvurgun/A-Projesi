@@ -27,8 +27,8 @@ namespace EntityLayer
         public string? Soyad { get; set; }
         [StringLength(50), Required]
         public string Email { get; set; }
-        [StringLength(30), Required]
-        public string KullaniciAdi { get; set; }
+        //[StringLength(30), Required]
+        //public string KullaniciAdi { get; set; }
         [StringLength(250), Required]
         public string Sifre { get; set; }
         [MinLength(6), MaxLength(16)]
