@@ -4464,7 +4464,8 @@ namespace DataAccessLayer
                            SoruId = 60,
                            AltKategoriId = 11,
                            Sorular = "Kaç Oda"
-                       }, new Soru
+                       }, 
+                       new Soru
                        {
                            SoruId = 61,
                            AltKategoriId = 11,
