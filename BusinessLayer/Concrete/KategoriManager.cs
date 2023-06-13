@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer;
 using DataAccessLayer.EntityFramework;
 using EntityLayer;
 using System;
@@ -12,11 +13,11 @@ namespace BusinessLayer.Concrete
    
     public class KategoriManager:IKategoriService
     {
-        EFKategoriRepository efKategoriRepository;
-        public KategoriManager()
-        {
-            efKategoriRepository = new EFKategoriRepository();
-        }
+        EFKategoriRepository efKategoriRepository ;
+        //public KategoriManager()
+        //{
+        //    efKategoriRepository = new EFKategoriRepository;
+        //}
 
         public void KategoriAdd(Kategori kategori)
         {

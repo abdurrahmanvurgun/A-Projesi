@@ -28,7 +28,8 @@ namespace DataAccessLayer
         public DbSet<Ilce> Ilceler { get; set; }
         public DbSet<Mahalle> Mahalleler { get; set; }
         public DbSet<Ulke> Ulkeler { get; set; }
-
+        public DbSet<Soru> Sorular { get; set; }
+        public DbSet<Cevap> Cevaplar { get; set; }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
 
@@ -66,21 +67,23 @@ namespace DataAccessLayer
 
             modelBuilder.Entity<AltKategori>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.KategoriId });
+                entity.HasKey(e => new { e.Id });
                 entity.Property(e => e.AltKategoriAdi);
                 entity.Property(e => e.Aktif);
                 entity.HasOne(e => e.Kategori).WithMany(e => e.AltKategoriler).HasForeignKey(e => e.KategoriId);
+                
             });
 
             modelBuilder.Entity<Soru>(entity =>
             {
-                entity.HasKey(e => new { e.SoruId, e.AltKategoriId });
+                entity.HasKey(e => new { e.SoruId });
                 entity.Property(e => e.Sorular);
+              
                 entity.HasOne(e => e.AltKategori).WithMany(e => e.Sorular).HasForeignKey(e => e.AltKategoriId);
             });
             modelBuilder.Entity<Cevap>(entity =>
             {
-                entity.HasKey(e => new { e.CevapId, e.SoruId });
+                entity.HasKey(e => new { e.CevapId });
                 entity.Property(e => e.Cevaplar);
                 entity.HasOne(e => e.Soru).WithMany(e => e.Cevaplar).HasForeignKey(e => e.SoruId);
             });
@@ -121,6 +124,8 @@ namespace DataAccessLayer
             AddDataToAltKategori10(modelBuilder);
             AddDataToAltKategori11(modelBuilder);
             AddDataToAltKategori12(modelBuilder);
+            AddDataToCevap(modelBuilder);
+            AddDataToSoru(modelBuilder);
         }
 
         void AddDataToKullaniciVeKullaniciRol(ModelBuilder modelBuilder)
@@ -258,7 +263,7 @@ namespace DataAccessLayer
                         }
                   );
         }
-        //Temizlik -kategoriid=1
+
         void AddDataToAltKategori(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AltKategori>().HasData(
@@ -269,7 +274,7 @@ namespace DataAccessLayer
                        AltKategoriAdi = "Ev Temizliği",
                        KategoriId = 1,
                        Aktif = true,
-                       
+
                    },
                     new AltKategori
                     {
@@ -337,7 +342,6 @@ namespace DataAccessLayer
 
                 );
         }
-
         void AddDataToAltKategori2(ModelBuilder modelBuilder)
 
 
@@ -393,12 +397,12 @@ namespace DataAccessLayer
                      Aktif = true
                  },
                  new AltKategori
-                  {
-                      Id = 18,
-                      AltKategoriAdi = "Havuz Yapımı",
-                      KategoriId = 2,
-                      Aktif = true
-                  },
+                 {
+                     Id = 18,
+                     AltKategoriAdi = "Havuz Yapımı",
+                     KategoriId = 2,
+                     Aktif = true
+                 },
                  new AltKategori
                  {
                      Id = 19,
@@ -584,7 +588,6 @@ namespace DataAccessLayer
                  }
                  );
         }
-
         void AddDataToAltKategori3(ModelBuilder modelBuilder)
 
 
@@ -781,7 +784,7 @@ namespace DataAccessLayer
                     },
                      new AltKategori
                      {
-                         Id =73,
+                         Id = 73,
                          AltKategoriAdi = "Minivan Nakliye",
                          KategoriId = 3,
                          Aktif = true
@@ -1664,693 +1667,693 @@ namespace DataAccessLayer
                     ///özel ders=katid=5
                     new AltKategori
                     {
-                        Id = 287,
+                        Id = 197,
                         AltKategoriAdi = "Almanca Özel Ders",
                         KategoriId = 5,
                         Aktif = true
                     },
                            new AltKategori
                            {
-                               Id = 2,
+                               Id = 198,
                                AltKategoriAdi = "Arapça Özel Ders",
                                KategoriId = 5,
                                Aktif = true
                            },
                            new AltKategori
                            {
-                               Id = 3,
+                               Id = 199,
                                AltKategoriAdi = "Bağlama Dersi",
                                KategoriId = 5,
                                Aktif = true
                            },
                            new AltKategori
                            {
-                               Id = 4,
+                               Id = 200,
                                AltKategoriAdi = "Basketbol Özel Ders",
                                KategoriId = 5,
                                Aktif = true
                            },
                            new AltKategori
                            {
-                               Id = 5,
+                               Id = 201,
                                AltKategoriAdi = "Bateri Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 6,
+                               Id = 202,
                                AltKategoriAdi = "Boks Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 7,
+                               Id = 203,
                                AltKategoriAdi = "Çello Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 8,
+                               Id = 204,
                                AltKategoriAdi = "DGS Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 9,
+                               Id = 205,
                                AltKategoriAdi = "Diferansiyel Denklemler Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 10,
+                               Id = 206,
                                AltKategoriAdi = "Dikiş Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 11,
+                               Id = 207,
                                AltKategoriAdi = "Diksiyon Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 12,
+                               Id = 208,
                                AltKategoriAdi = "Direksiyon Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 13,
+                               Id = 209,
                                AltKategoriAdi = "Eğitim Koçu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 14,
+                               Id = 210,
                                AltKategoriAdi = "Excel Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 15,
+                               Id = 211,
                                AltKategoriAdi = "Fen Bilimleri Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 16,
+                               Id = 212,
                                AltKategoriAdi = "Fitness Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 17,
+                               Id = 213,
                                AltKategoriAdi = "Fizik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 18,
+                               Id = 214,
                                AltKategoriAdi = "Fransızca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 19,
+                               Id = 215,
                                AltKategoriAdi = "Gitar Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 20,
+                               Id = 216,
                                AltKategoriAdi = "Gitar Kursu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 21,
+                               Id = 217,
                                AltKategoriAdi = "Gölge Öğretmen",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 22,
+                               Id = 218,
                                AltKategoriAdi = "Grup Pilates Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 23,
+                               Id = 219,
                                AltKategoriAdi = "Hızlı Okuma Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 24,
+                               Id = 220,
                                AltKategoriAdi = "Hukuk Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 25,
+                               Id = 221,
                                AltKategoriAdi = "IELTS Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 26,
+                               Id = 222,
                                AltKategoriAdi = "İktisat Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 27,
+                               Id = 223,
                                AltKategoriAdi = "İlkokul Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 28,
+                               Id = 224,
                                AltKategoriAdi = "İlkokul Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 29,
+                               Id = 225,
                                AltKategoriAdi = "İngilizce Konuşma Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 30,
+                               Id = 226,
                                AltKategoriAdi = "İngilizce Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 31,
+                               Id = 227,
                                AltKategoriAdi = "İspanyolca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 32,
+                               Id = 228,
                                AltKategoriAdi = "İstatistik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 33,
+                               Id = 229,
                                AltKategoriAdi = "İtalyanca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 34,
+                               Id = 230,
                                AltKategoriAdi = "Keman Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 35,
+                               Id = 231,
                                AltKategoriAdi = "Kick Boks Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 36,
+                               Id = 232,
                                AltKategoriAdi = "Kimya Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 37,
+                               Id = 233,
                                AltKategoriAdi = "Klarnet Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 38,
+                               Id = 234,
                                AltKategoriAdi = "KPSS Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 39,
+                               Id = 235,
                                AltKategoriAdi = "Kuran Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 40,
+                               Id = 236,
                                AltKategoriAdi = "LGS Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 41,
+                               Id = 237,
                                AltKategoriAdi = "Lise Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 42,
+                               Id = 238,
                                AltKategoriAdi = "Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 43,
+                               Id = 239,
                                AltKategoriAdi = "Motosiklet Eğitimi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 44,
+                               Id = 240,
                                AltKategoriAdi = "Ödev Ablası",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 1,
+                               Id = 241,
                                AltKategoriAdi = "Öğrenci Koçu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 2,
+                               Id = 242,
                                AltKategoriAdi = "Okuma Yazma Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 3,
+                               Id = 243,
                                AltKategoriAdi = "Online Almanca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 4,
+                               Id = 244,
                                AltKategoriAdi = "Online Arapça Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 5,
+                               Id = 245,
                                AltKategoriAdi = "Online Calculus Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 6,
+                               Id = 246,
                                AltKategoriAdi = "Online Diksiyon Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 7,
+                               Id = 247,
                                AltKategoriAdi = "Online Eğitim Koçu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 8,
+                               Id = 248,
                                AltKategoriAdi = "Online Fizik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 9,
+                               Id = 249,
                                AltKategoriAdi = "Online Fransızca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 10,
+                               Id = 250,
                                AltKategoriAdi = "Online Gitar Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 11,
+                               Id = 251,
                                AltKategoriAdi = "Online IELTS Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 12,
+                               Id = 252,
                                AltKategoriAdi = "Online İlkokul Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 13,
+                               Id = 253,
                                AltKategoriAdi = "Online İngilizce Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 14,
+                               Id = 254,
                                AltKategoriAdi = "Online İspanyolca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 15,
+                               Id = 255,
                                AltKategoriAdi = "Online İtalyanca Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 16,
+                               Id = 256,
                                AltKategoriAdi = "Online LGS Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 17,
+                               Id = 257,
                                AltKategoriAdi = "Online Lise Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 18,
+                               Id = 258,
                                AltKategoriAdi = "Online Muhasebe Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 19,
+                               Id = 259,
                                AltKategoriAdi = "Online Öğrenci Koçu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 20,
+                               Id = 260,
                                AltKategoriAdi = "Online Ortaokul Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 21,
+                               Id = 261,
                                AltKategoriAdi = "Online Personal Trainer",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 22,
+                               Id = 262,
                                AltKategoriAdi = "Online Pilates Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 23,
+                               Id = 263,
                                AltKategoriAdi = "Online Resim Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 24,
+                               Id = 264,
                                AltKategoriAdi = "Online Rusça Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 25,
+                               Id = 265,
                                AltKategoriAdi = "Online Şan Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 1,
+                               Id = 266,
                                AltKategoriAdi = "Online Türkçe Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 2,
+                               Id = 267,
                                AltKategoriAdi = "Online TYT AYT Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 3,
+                               Id = 268,
                                AltKategoriAdi = "Online Yabancılar İçin Türkçe Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 4,
+                               Id = 269,
                                AltKategoriAdi = "Online Yoga Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 5,
+                               Id = 270,
                                AltKategoriAdi = "Ortaokul Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 6,
+                               Id = 271,
                                AltKategoriAdi = "Otizm Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 7,
+                               Id = 272,
                                AltKategoriAdi = "Özel Ders",
                                KategoriId = 5,
                                Aktif = true
                            },
                            new AltKategori
                            {
-                               Id = 8,
+                               Id = 273,
                                AltKategoriAdi = "Personal Trainer",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 9,
+                               Id = 274,
                                AltKategoriAdi = "Pilates Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 10,
+                               Id = 275,
                                AltKategoriAdi = "Piyano Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 11,
+                               Id = 276,
                                AltKategoriAdi = "Reformer Pilates Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 12,
+                               Id = 277,
                                AltKategoriAdi = "Resim Kursu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 13,
+                               Id = 278,
                                AltKategoriAdi = "Resim Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 14,
+                               Id = 279,
                                AltKategoriAdi = "Rusça Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 15,
+                               Id = 280,
                                AltKategoriAdi = "Şan Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 16,
+                               Id = 281,
                                AltKategoriAdi = "Satranç Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 17,
+                               Id = 282,
                                AltKategoriAdi = "Sınıf Öğretmeni",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 18,
+                               Id = 283,
                                AltKategoriAdi = "Spor Koçu",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 19,
+                               Id = 284,
                                AltKategoriAdi = "Tenis Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 20,
+                               Id = 285,
                                AltKategoriAdi = "Türkçe Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 21,
+                               Id = 286,
                                AltKategoriAdi = "TYT AYT Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 22,
+                               Id = 287,
                                AltKategoriAdi = "Üniversite Fizik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 23,
+                               Id = 288,
                                AltKategoriAdi = "Üniversite Kimya Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 1,
+                               Id = 289,
                                AltKategoriAdi = "Üniversite Matematik Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 2,
+                               Id = 290,
                                AltKategoriAdi = "Yabancılar İçin Türkçe Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 3,
+                               Id = 291,
                                AltKategoriAdi = "Yan Flüt Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 4,
+                               Id = 292,
                                AltKategoriAdi = "Yazılım Özel Ders",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 5,
+                               Id = 293,
                                AltKategoriAdi = "Yoga Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 6,
+                               Id = 294,
                                AltKategoriAdi = "Yüzme Dersi",
                                KategoriId = 5,
                                Aktif = true,
                            },
                            new AltKategori
                            {
-                               Id = 7,
+                               Id = 295,
                                AltKategoriAdi = "Zeybek Dersi",
                                KategoriId = 5,
                                Aktif = true,
@@ -2364,505 +2367,505 @@ namespace DataAccessLayer
 
        new AltKategori
        {
-           Id = 1,
+           Id = 296,
            AltKategoriAdi = "Aile Danışmanı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 297,
            AltKategoriAdi = "Aile Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 298,
            AltKategoriAdi = "Astroloji Danışmanlığı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 299,
            AltKategoriAdi = "Bioenerji Uzmanı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 300,
            AltKategoriAdi = "Çift Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 301,
            AltKategoriAdi = "ACilt Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 302,
            AltKategoriAdi = "Cinsel Terapi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 303,
            AltKategoriAdi = "Çocuk Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 304,
            AltKategoriAdi = "Çocuk Bakımı Ve Ev",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 305,
            AltKategoriAdi = "Yardımcısı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 306,
            AltKategoriAdi = "Çocuk Psikoloğu",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 307,
            AltKategoriAdi = "Dil Ve Konuşma Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 308,
            AltKategoriAdi = "Diyetisyen",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 309,
            AltKategoriAdi = "Doğum Haritası Çıkarma",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 310,
            AltKategoriAdi = "Dövme Tattoo",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 311,
            AltKategoriAdi = "EMDR Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 312,
            AltKategoriAdi = "Emzirme Danışmanı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 313,
            AltKategoriAdi = "Epilasyon",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 314,
            AltKategoriAdi = "Erkek Epilasyon",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 315,
            AltKategoriAdi = "Ev Yardımcısı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 316,
            AltKategoriAdi = "Evde Bakım Hizmetleri",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 317,
            AltKategoriAdi = "Evde Fizik Tedavi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 318,
            AltKategoriAdi = "Evde Hasta Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 319,
            AltKategoriAdi = "Evde Hemşire",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 320,
            AltKategoriAdi = "Evde Yaşlı Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 321,
            AltKategoriAdi = "Evlilik Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 322,
            AltKategoriAdi = "Fal Bakma",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 323,
            AltKategoriAdi = "Fizyoterapist",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 324,
            AltKategoriAdi = "Gelin Makyajı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 325,
            AltKategoriAdi = "Gelin Saçı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 326,
            AltKategoriAdi = "Hasta Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 327,
            AltKategoriAdi = "Hastane Refakatçisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 328,
            AltKategoriAdi = "Hemşire",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 329,
            AltKategoriAdi = "Hipnoterapi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 330,
            AltKategoriAdi = "İngilizce Oyun Ablası",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 331,
            AltKategoriAdi = "İpek Kirpik",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 332,
            AltKategoriAdi = "Kalıcı Oje Yapımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 333,
            AltKategoriAdi = "Kaş Kontürü",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 334,
            AltKategoriAdi = "Kayropraktik",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 335,
            AltKategoriAdi = "Klinik Psikolog",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 336,
            AltKategoriAdi = "Kuaför",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 337,
            AltKategoriAdi = "Makyaj",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 338,
            AltKategoriAdi = "Manuel Terapi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 339,
            AltKategoriAdi = "Masaj (Erkek İçin)",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 340,
            AltKategoriAdi = "Masaj (Kadın İçin)",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 341,
            AltKategoriAdi = "Medyum",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 342,
            AltKategoriAdi = "Microblading",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 343,
            AltKategoriAdi = "Nefes Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 344,
            AltKategoriAdi = "Nişan Makyajı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 345,
            AltKategoriAdi = "Ombre",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 346,
            AltKategoriAdi = "Online Çift Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 347,
            AltKategoriAdi = "Online Cinsel Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 348,
            AltKategoriAdi = "Online Çocuk Psikoloğo",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 349,
            AltKategoriAdi = "Online Dil Ve Konuşma",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 350,
            AltKategoriAdi = "Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 351,
            AltKategoriAdi = "Online Diyetisyen",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 352,
            AltKategoriAdi = "Online Evlilik Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 353,
            AltKategoriAdi = "Online Pedagog",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 354,
            AltKategoriAdi = "Online Psikolog",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 355,
            AltKategoriAdi = "Online Psikolojik",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 356,
            AltKategoriAdi = "Danışman",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 357,
            AltKategoriAdi = "Online Psikoterapi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 358,
            AltKategoriAdi = "Online Stil Danışmanı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 359,
            AltKategoriAdi = "Online Terapi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 360,
            AltKategoriAdi = "Online Yaşam Koçu",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 361,
            AltKategoriAdi = "Oyun Ablası",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 362,
            AltKategoriAdi = "Oyun Terapisi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 363,
            AltKategoriAdi = "Özel Ambulans",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 364,
            AltKategoriAdi = "Özel Eğitim",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 365,
            AltKategoriAdi = "Pedagog",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 366,
            AltKategoriAdi = "Personel Trainer",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 367,
            AltKategoriAdi = "Pilates Dersi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 368,
            AltKategoriAdi = "Protez Tırnak Yapımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 369,
            AltKategoriAdi = "APsikolog",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 370,
            AltKategoriAdi = "Psikolojik Danışmanı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 371,
            AltKategoriAdi = "Psikoterapi",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 372,
            AltKategoriAdi = "Saatlik Çocuk Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 373,
            AltKategoriAdi = "Saç Boyama",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 374,
            AltKategoriAdi = "Saç Kaynağı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 375,
            AltKategoriAdi = "Stil Danışmanı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 376,
            AltKategoriAdi = "AUzman Psikolog",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 377,
            AltKategoriAdi = "Yaşam Koçu",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 378,
            AltKategoriAdi = "Yaşlı Bakımı",
            KategoriId = 6,
            Aktif = true
        }, new AltKategori
        {
-           Id = 1,
+           Id = 379,
            AltKategoriAdi = "Yetişkin Psikolog",
            KategoriId = 6,
            Aktif = true
@@ -2875,315 +2878,315 @@ namespace DataAccessLayer
             modelBuilder.Entity<AltKategori>().HasData(
                    new AltKategori
                    {
-                       Id = 43,
+                       Id = 380,
                        AltKategoriAdi = "Açılış Organizasyonu",
                        KategoriId = 7,
                        Aktif = true
                    },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 381,
                   AltKategoriAdi = "Animatör",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 382,
                    AltKategoriAdi = "Bando Takımı",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 383,
                   AltKategoriAdi = "Butik Pasta",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 384,
                    AltKategoriAdi = "Canlı Müzik",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 385,
                   AltKategoriAdi = "Catering",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 386,
                    AltKategoriAdi = "Davet Catering",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 387,
                   AltKategoriAdi = "Davul Zurnacı Kiralama",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 388,
                    AltKategoriAdi = "DJ",
                    KategoriId = 7,
                    Aktif = true
                },
              new AltKategori
              {
-                 Id = 43,
+                 Id = 389,
                  AltKategoriAdi = "Doğum Günü Catering",
                  KategoriId = 7,
                  Aktif = true
              },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 390,
                   AltKategoriAdi = "Doğum Günü Mekanları",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 391,
                    AltKategoriAdi = "Doğum Günü Organizasyonu",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 392,
                   AltKategoriAdi = "Doğum Günü Pastası",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 293,
                    AltKategoriAdi = "Düğün Bandosu",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 294,
                   AltKategoriAdi = "Düğün Catering",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 295,
                    AltKategoriAdi = "Düğün Organizasyon",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 296,
                   AltKategoriAdi = "Düğün Orkestrası",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 297,
                    AltKategoriAdi = "Düğün Yemeği",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 298,
                   AltKategoriAdi = "Evlilik Teklifi Organizasyon",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 299,
                    AltKategoriAdi = "Garson Kiralama",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 300,
                   AltKategoriAdi = "Gelin Alma Bandosu",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 301,
                    AltKategoriAdi = "Gelin Arabası Kiralama",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 302,
                   AltKategoriAdi = "Gelinlik Dikimi",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 303,
                    AltKategoriAdi = "Hastane Odası Süsleme",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 304,
                   AltKategoriAdi = "İftar Yemeği Catering",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 305,
                    AltKategoriAdi = "Kına Organizasyon",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 306,
                   AltKategoriAdi = "Klasik Araba Kiralama",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 307,
                    AltKategoriAdi = "Kokteyl Catering",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 308,
                   AltKategoriAdi = "Masa Sandalye Kiralama",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 309,
                    AltKategoriAdi = "Mevlüt Yemeği",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 310,
                   AltKategoriAdi = "Mevlüt Yemeği Catering",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 311,
                    AltKategoriAdi = "Müzisyen",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 312,
                   AltKategoriAdi = "Nişan İkramlıkları Catering",
                   KategoriId = 7,
                   Aktif = true
               },
                 new AltKategori
                 {
-                    Id = 43,
+                    Id = 313,
                     AltKategoriAdi = "Nişan Menüsü Catering",
                     KategoriId = 7,
                     Aktif = true
                 },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 314,
                   AltKategoriAdi = "Nişan Organizasyon",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 315,
                    AltKategoriAdi = "Nişan Pastası",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 316,
                   AltKategoriAdi = "Palyaço",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 317,
                    AltKategoriAdi = "Sihirbaz",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 318,
                   AltKategoriAdi = "Söz Organizyon",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 319,
                    AltKategoriAdi = "Sünnet Organizasyon",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 320,
                   AltKategoriAdi = "Tabldot Yemek",
                   KategoriId = 7,
                   Aktif = true
               },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 321,
                    AltKategoriAdi = "Temsili Nikah Memuru",
                    KategoriId = 7,
                    Aktif = true
                },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 322,
                    AltKategoriAdi = "Yaş Pasta",
                    KategoriId = 7,
                    Aktif = true
                },
                new AltKategori
                {
-                   Id = 43,
+                   Id = 323,
                    AltKategoriAdi = "Yat Kiralama",
                    KategoriId = 7,
                    Aktif = true
                },
               new AltKategori
               {
-                  Id = 43,
+                  Id = 324,
                   AltKategoriAdi = "Yatta Evlilik Teklifi",
                   KategoriId = 7,
                   Aktif = true
@@ -3198,115 +3201,115 @@ namespace DataAccessLayer
                 //fotograf ve video katid=8
                 new AltKategori
                 {
-                    Id = 1,
+                    Id = 325,
                     AltKategoriAdi = "Bebek Fotoğrafçısı",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 326,
                     AltKategoriAdi = "Dış Çekim Fotoğraf",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 327,
                     AltKategoriAdi = "Doğum Günü Fotoğrafçısı",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 328,
                     AltKategoriAdi = "Drone Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 329,
                     AltKategoriAdi = "Drone Fotoğraf Ve Video",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 330,
                     AltKategoriAdi = "Düğün Fotoğrafçısı",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 331,
                     AltKategoriAdi = "Düğün Video Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 332,
                     AltKategoriAdi = "Fotoğrafçı",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 333,
                     AltKategoriAdi = "Hamile Fotoğraf Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 334,
                     AltKategoriAdi = "İnstagram İçin Fotoğraf Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 335,
                     AltKategoriAdi = "Mekan Fotoğraf Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 336,
                     AltKategoriAdi = "Nişan Fotoğrafçısı",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 337,
                     AltKategoriAdi = "Sosyal Medya İçin Fotoğraf Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 338,
                     AltKategoriAdi = "Sosyal Medya Video Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 339,
                     AltKategoriAdi = "Stüdyo Fotoğraf Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 340,
                     AltKategoriAdi = "Tanıtım Filmi Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 341,
                     AltKategoriAdi = "Ürün Fotoğraf Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 342,
                     AltKategoriAdi = "Video Çekimi",
                     KategoriId = 8,
                     Aktif = true
                 }, new AltKategori
                 {
-                    Id = 1,
+                    Id = 343,
                     AltKategoriAdi = "Video Editörü",
                     KategoriId = 8,
                     Aktif = true
@@ -3320,583 +3323,583 @@ namespace DataAccessLayer
                   //dijital ve kurumsal katid=9
                   new AltKategori
                   {
-                      Id = 1,
+                      Id = 344,
                       AltKategoriAdi = "3D Animasyon Yapımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 345,
                       AltKategoriAdi = "3D Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 346,
                       AltKategoriAdi = "Abiye Dikimi",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 347,
                       AltKategoriAdi = "Afiş Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 348,
                       AltKategoriAdi = "Almanca Çeviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 349,
                       AltKategoriAdi = "Almanca Yeminli Tercüme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 350,
                       AltKategoriAdi = "Ambalaj Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 351,
                       AltKategoriAdi = "Android Uygulama",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 352,
                       AltKategoriAdi = "Geliştirme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 353,
                       AltKategoriAdi = "Animasyon Yapımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 354,
                       AltKategoriAdi = "Arapça Çeviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 355,
                       AltKategoriAdi = "AutoCAD Çizim",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 356,
                       AltKategoriAdi = "Banner Tasarımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 357,
                       AltKategoriAdi = "Broşür Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 358,
                       AltKategoriAdi = "Broşür Dağıtım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 359,
                       AltKategoriAdi = "Broşür Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 360,
                       AltKategoriAdi = "CV Hazırlama Danışmanlığı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 361,
                       AltKategoriAdi = "Davetiye Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 362,
                       AltKategoriAdi = "Dijital Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 363,
                       AltKategoriAdi = "Dijital Pazarlama ve Reklam",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 364,
                       AltKategoriAdi = "Dış Ticaret Danışmanlık",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 365,
                       AltKategoriAdi = "Duvara Resim Yapma",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 366,
                       AltKategoriAdi = "E Ticaret Danışmanı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 367,
                       AltKategoriAdi = "E Ticaret Sitesi Yapımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 368,
                       AltKategoriAdi = "Elbise Dikimi",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 369,
                       AltKategoriAdi = "Elbise İmalatı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 370,
                       AltKategoriAdi = "Elektronik Devre Tasarımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 371,
                       AltKategoriAdi = "Freelance Yazılımcı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 372,
                       AltKategoriAdi = "Fuar Hostesi",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 373,
                       AltKategoriAdi = "Google Reklam Yönetimi",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 374,
                       AltKategoriAdi = "Graffiti",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 375,
                       AltKategoriAdi = "Grafik Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 376,
                       AltKategoriAdi = "Gümrük Müşaviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 377,
                       AltKategoriAdi = "3D Animasyon Yapımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 378,
                       AltKategoriAdi = "İllüstrasyon Çizim",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 379,
                       AltKategoriAdi = "İngilizce Çeviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 380,
                       AltKategoriAdi = "İngilizce Makale Yazımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 381,
                       AltKategoriAdi = "İngilizce Yeminli Tercüme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 382,
                       AltKategoriAdi = "İş Sağlığı ve Güvenliği",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 383,
                       AltKategoriAdi = "Kadın Manken",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 384,
                       AltKategoriAdi = "Karakalem Çizim",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 385,
                       AltKategoriAdi = "Karikatür Çizim",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 386,
                       AltKategoriAdi = "Kartvizit Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 387,
                       AltKategoriAdi = "Kartvizit Tasarımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 388,
                       AltKategoriAdi = "Katalog Tasarımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 389,
                       AltKategoriAdi = "Kitap Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 390,
                       AltKategoriAdi = "Kitap Editörü",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 391,
                       AltKategoriAdi = "Kitap Kapağı Tasarımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 392,
                       AltKategoriAdi = "KOSGEB Danışmanlık",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 393,
                       AltKategoriAdi = "Kutu Harf Tabela",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 394,
                       AltKategoriAdi = "Limited Şirket Kurma",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 395,
                       AltKategoriAdi = "Logo Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 396,
                       AltKategoriAdi = "Marka Tescil",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 397,
                       AltKategoriAdi = "Metin Yazarı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 398,
                       AltKategoriAdi = "Metin Yazma",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 399,
                       AltKategoriAdi = "Mevcut Web Sitesi Düzenleme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 400,
                       AltKategoriAdi = "Mobil Uygulama Geliştirme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 401,
                       AltKategoriAdi = "Moda Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 402,
                       AltKategoriAdi = "Modelist",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 403,
                       AltKategoriAdi = "Müzik Prodüksiyon",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 404,
                       AltKategoriAdi = "Osmanlıca Çeviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 405,
                       AltKategoriAdi = "Oyun Programlama",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 406,
                       AltKategoriAdi = "Özel Güvenlik",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 407,
                       AltKategoriAdi = "Özel Koruma",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 408,
                       AltKategoriAdi = "Photoshop Uzmanı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 409,
                       AltKategoriAdi = "Pleksi Tabela",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 410,
                       AltKategoriAdi = "Python Programlama",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 411,
                       AltKategoriAdi = "Reklam Tasarımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 412,
                       AltKategoriAdi = "Ressam",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 413,
                       AltKategoriAdi = "Rusça Çeviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 414,
                       AltKategoriAdi = "Şahıs Şirketi Kurma",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 415,
                       AltKategoriAdi = "Senaryo Yazarı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 416,
                       AltKategoriAdi = "Logo Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 417,
                       AltKategoriAdi = "SEO Hizmeti",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 418,
                       AltKategoriAdi = "SEO Uyumlu Makale Yazımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 419,
                       AltKategoriAdi = "Seslendirme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 420,
                       AltKategoriAdi = "SGK Danışmanlık",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 421,
                       AltKategoriAdi = "Simultane Çeviri",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 422,
                       AltKategoriAdi = "Site Bina ve Apartman Yönetimi",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 423,
                       AltKategoriAdi = "Sosyal Medya Danışmanlığı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 424,
                       AltKategoriAdi = "Sosyal Medya Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 425,
                       AltKategoriAdi = "Sosyal Medya Uzmanı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 426,
                       AltKategoriAdi = "Sosyal Medya Yönetimi ve Danışmanlığı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 427,
                       AltKategoriAdi = "SPSS Analizi",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 428,
                       AltKategoriAdi = "Sunum Hazırlama",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 429,
                       AltKategoriAdi = "Sweatshirt İmalatı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 430,
                       AltKategoriAdi = "Tabela",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 431,
                       AltKategoriAdi = "Tekstil Fason Dikim ve İmalat",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 432,
                       AltKategoriAdi = "Tişört Baskı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 433,
                       AltKategoriAdi = "Tişört İmalatı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 434,
                       AltKategoriAdi = "Vize Danışmanı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 435,
                       AltKategoriAdi = "Web Site Yapımı",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 436,
                       AltKategoriAdi = "Web Tasarım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 437,
                       AltKategoriAdi = "Web Tasarım Programlama",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 438,
                       AltKategoriAdi = "Web Yazılım",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 439,
                       AltKategoriAdi = "Yazılım Geliştirme",
                       KategoriId = 9,
                       Aktif = true
                   }, new AltKategori
                   {
-                      Id = 1,
+                      Id = 440,
                       AltKategoriAdi = "Yeminli Mütercim Tercüman",
                       KategoriId = 9,
                       Aktif = true
@@ -3910,76 +3913,76 @@ namespace DataAccessLayer
                     //evcil hayvanlar katid=10
                     new AltKategori
                     {
-                        Id = 1,
+                        Id = 441,
                         AltKategoriAdi = "Evde Kedi Bakımı",
                         KategoriId = 10,
                         Aktif = true
                     },
                    new AltKategori
                    {
-                       Id = 1,
+                       Id = 442,
                        AltKategoriAdi = "Kedi Bakımı",
                        KategoriId = 10,
                        Aktif = true
                    },
                    new AltKategori
                    {
-                       Id = 1,
+                       Id = 443,
                        AltKategoriAdi = "Kedi Oteli",
                        KategoriId = 10,
                        Aktif = true
                    },
                    new AltKategori
                    {
-                       Id = 1,
+                       Id = 444,
                        AltKategoriAdi = "Kedi Teli",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 445,
                        AltKategoriAdi = "Kedi Traşı",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 446,
                        AltKategoriAdi = "Köpek Eğitimi",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 447,
                        AltKategoriAdi = "Köpek Gezdirme",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 448,
                        AltKategoriAdi = "Köpek Kuaförü",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 449,
                        AltKategoriAdi = "Köpek Oteli",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 450,
                        AltKategoriAdi = "Köpek Pansiyonu",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 451,
                        AltKategoriAdi = "Köpek Traşı",
                        KategoriId = 10,
                        Aktif = true
                    }, new AltKategori
                    {
-                       Id = 1,
+                       Id = 452,
                        AltKategoriAdi = "Pet Kuaförü",
                        KategoriId = 10,
                        Aktif = true
@@ -3993,91 +3996,91 @@ namespace DataAccessLayer
                      //oto ve araç katid=11
                      new AltKategori
                      {
-                         Id = 1,
+                         Id = 453,
                          AltKategoriAdi = "Araç Bakım",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 454,
                          AltKategoriAdi = "Araç Folyo Kaplama",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 455,
                          AltKategoriAdi = "Araç Koltuk Temizleme",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 456,
                          AltKategoriAdi = "Araç Seramik Kaplama",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 457,
                          AltKategoriAdi = "Balata Değişimi",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 458,
                          AltKategoriAdi = "Baskı Balata Değişimi",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 459,
                          AltKategoriAdi = "Boyasız Göçük Düzeltme",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 460,
                          AltKategoriAdi = "Motor Yağ Değişimi",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 461,
                          AltKategoriAdi = "Oto Bakım",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 462,
                          AltKategoriAdi = "Oto Boya",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 463,
                          AltKategoriAdi = "AOto Cam Filmi",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 464,
                          AltKategoriAdi = "Oto Ekspertiz",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 465,
                          AltKategoriAdi = "Oto Kuaför",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 466,
                          AltKategoriAdi = "Pasta Cila",
                          KategoriId = 11,
                          Aktif = true
                      }, new AltKategori
                      {
-                         Id = 1,
+                         Id = 467,
                          AltKategoriAdi = "Triger Seti Değişimi",
                          KategoriId = 11,
                          Aktif = true
@@ -4087,125 +4090,128 @@ namespace DataAccessLayer
 
 
         {
-                modelBuilder.Entity<AltKategori>().HasData(
-                          //diğer katid=12
-                          new AltKategori
-                          {
-                              Id = 1,
-                              AltKategoriAdi = "Emlak Satış Danışmanı",
-                              KategoriId = 12,
-                              Aktif = true
-                          }, new AltKategori
-                          {
-                              Id = 1,
-                              AltKategoriAdi = "Gayrimenkul Değerleme",
-                              KategoriId = 12,
-                              Aktif = true
-                          }, new AltKategori
-                          {
-                              Id = 1,
-                              AltKategoriAdi = "Özel Dedektif",
-                              KategoriId = 12,
-                              Aktif = true
-                          }, new AltKategori
-                          {
-                              Id = 1,
-                              AltKategoriAdi = "Trafik Sigortası",
-                              KategoriId = 12,
-                              Aktif = true
-                          });
-            }
+            modelBuilder.Entity<AltKategori>().HasData(
+                      //diğer katid=12
+                      new AltKategori
+                      {
+                          Id = 468,
+                          AltKategoriAdi = "Emlak Satış Danışmanı",
+                          KategoriId = 12,
+                          Aktif = true
+                      }, new AltKategori
+                      {
+                          Id = 469,
+                          AltKategoriAdi = "Gayrimenkul Değerleme",
+                          KategoriId = 12,
+                          Aktif = true
+                      }, new AltKategori
+                      {
+                          Id = 470,
+                          AltKategoriAdi = "Özel Dedektif",
+                          KategoriId = 12,
+                          Aktif = true
+                      }, new AltKategori
+                      {
+                          Id = 471,
+                          AltKategoriAdi = "Trafik Sigortası",
+                          KategoriId = 12,
+                          Aktif = true
+                      });
+        }
+
+
+
 
         void AddDataToSoru(ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Soru>().HasData(
-                //Ev temizliği
+                      //Ev temizliği
                       new Soru
                       {
-                          SoruId=1,
-                          AltKategoriId=1,
-                          Sorular="Evin Büyüklüğü"
-                      }, 
-                      new Soru
-                      {
-                          SoruId=2,
-                          AltKategoriId=1,
-                          Sorular="Banyo Sayısı"
+                          SoruId = 1,
+                          AltKategoriId = 1,
+                          Sorular = "Evin Büyüklüğü"
                       },
                       new Soru
                       {
-                          SoruId=3,
-                          AltKategoriId=1,
-                          Sorular="Kaç Saat"
+                          SoruId = 2,
+                          AltKategoriId = 1,
+                          Sorular = "Banyo Sayısı"
                       },
                       new Soru
                       {
-                          SoruId=4,
-                          AltKategoriId=1,
-                          Sorular="Hangi Sıklık"
+                          SoruId = 3,
+                          AltKategoriId = 1,
+                          Sorular = "Kaç Saat"
                       },
                       new Soru
                       {
-                          SoruId=5,
-                          AltKategoriId=1,
-                          Sorular="Ek Hizmet"
+                          SoruId = 4,
+                          AltKategoriId = 1,
+                          Sorular = "Hangi Sıklık"
                       },
                       new Soru
                       {
-                          SoruId=6,
-                          AltKategoriId=1,
-                          Sorular="il"
-                      },new Soru
-                      {
-                          SoruId=7,
-                          AltKategoriId=1,
-                          Sorular="ilçe"
+                          SoruId = 5,
+                          AltKategoriId = 1,
+                          Sorular = "Ek Hizmet"
                       },
                       new Soru
                       {
-                          SoruId=8,
-                          AltKategoriId=1,
-                          Sorular="Detay"
+                          SoruId = 6,
+                          AltKategoriId = 1,
+                          Sorular = "il"
+                      }, new Soru
+                      {
+                          SoruId = 7,
+                          AltKategoriId = 1,
+                          Sorular = "ilçe"
+                      },
+                      new Soru
+                      {
+                          SoruId = 8,
+                          AltKategoriId = 1,
+                          Sorular = "Detay"
                       },
                       /////Apartman Temizliği
                       ///
                       new Soru
                       {
-                          SoruId =9,
+                          SoruId = 9,
                           AltKategoriId = 2,
                           Sorular = "Daire Sayısı"
-                      }, 
+                      },
                       new Soru
                       {
-                          SoruId =10,
+                          SoruId = 10,
                           AltKategoriId = 2,
                           Sorular = "Çöp Toplansın mı"
-                      }, 
+                      },
                       new Soru
                       {
-                          SoruId =11,
+                          SoruId = 11,
                           AltKategoriId = 2,
                           Sorular = "Hangi Sıklık"
-                      }, 
+                      },
                       new Soru
                       {
-                          SoruId =12,
+                          SoruId = 12,
                           AltKategoriId = 2,
                           Sorular = "il"
                       }, new Soru
                       {
-                          SoruId =13,
+                          SoruId = 13,
                           AltKategoriId = 2,
                           Sorular = "ilçe"
                       },
                       new Soru
                       {
-                          SoruId =14,
+                          SoruId = 14,
                           AltKategoriId = 2,
                           Sorular = "Detay"
                       },
-                      ///Ofis Temizliği
+                     
                       new Soru
                       {
                           SoruId = 15,
@@ -5585,83 +5591,84 @@ namespace DataAccessLayer
                       {
                           CevapId = 8,
                           SoruId = 2,
-                          Cevaplar="diğer"
-                      },new Cevap
+                          Cevaplar = "diğer"
+                      }
+                      , new Cevap
                       {
                           CevapId = 9,
                           SoruId = 3,
-                          Cevaplar="3"
-                      },new Cevap
+                          Cevaplar = "3"
+                      }, new Cevap
                       {
                           CevapId = 10,
                           SoruId = 3,
-                          Cevaplar="4"
-                      },new Cevap
+                          Cevaplar = "4"
+                      }, new Cevap
                       {
                           CevapId = 11,
                           SoruId = 3,
-                          Cevaplar="5"
-                      },new Cevap
+                          Cevaplar = "5"
+                      }, new Cevap
                       {
                           CevapId = 12,
                           SoruId = 3,
-                          Cevaplar="6"
-                      },new Cevap
+                          Cevaplar = "6"
+                      }, new Cevap
                       {
                           CevapId = 13,
                           SoruId = 3,
-                          Cevaplar="Diğer"
-                      },new Cevap
+                          Cevaplar = "Diğer"
+                      }, new Cevap
                       {
                           CevapId = 14,
                           SoruId = 4,
-                          Cevaplar="Haftada Bir"
-                      },new Cevap
+                          Cevaplar = "Haftada Bir"
+                      }, new Cevap
                       {
                           CevapId = 15,
                           SoruId = 4,
-                          Cevaplar="Haftada iki"
-                      },new Cevap
+                          Cevaplar = "Haftada iki"
+                      }, new Cevap
                       {
                           CevapId = 16,
                           SoruId = 4,
-                          Cevaplar="Tek Seferlik"
+                          Cevaplar = "Tek Seferlik"
                       },
                       new Cevap
                       {
                           CevapId = 17,
                           SoruId = 4,
-                          Cevaplar="Diğer"
-                      },new Cevap
+                          Cevaplar = "Diğer"
+                      }, new Cevap
                       {
                           CevapId = 18,
                           SoruId = 5,
-                          Cevaplar="Yemek"
-                      },new Cevap
+                          Cevaplar = "Yemek"
+                      }, new Cevap
                       {
                           CevapId = 19,
                           SoruId = 5,
-                          Cevaplar="Çamaşır Yıkama"
-                      },new Cevap
+                          Cevaplar = "Çamaşır Yıkama"
+                      }, new Cevap
                       {
                           CevapId = 20,
                           SoruId = 5,
-                          Cevaplar="Ütü"
-                      },new Cevap
+                          Cevaplar = "Ütü"
+                      }, new Cevap
                       {
                           CevapId = 21,
                           SoruId = 6,
-                          Cevaplar="il"
-                      },new Cevap
+                          Cevaplar = "il"
+                      }, new Cevap
                       {
                           CevapId = 22,
                           SoruId = 7,
-                          Cevaplar="ilçe"
-                      },new Cevap
+                          Cevaplar = "ilçe"
+                      }, new Cevap
                       {
                           CevapId = 23,
                           SoruId = 8,
-                          Cevaplar="Mesaj"
+                          Cevaplar = "Mesaj"
                       },
                       /////apartman temizliği
                       new Cevap
@@ -5687,12 +5694,12 @@ namespace DataAccessLayer
                           CevapId = 27,
                           SoruId = 9,
                           Cevaplar = "Diğer"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 28,
                           SoruId = 10,
                           Cevaplar = "Evet"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 29,
                           SoruId = 10,
@@ -5717,17 +5724,17 @@ namespace DataAccessLayer
                           CevapId = 33,
                           SoruId = 11,
                           Cevaplar = "Diğer"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 34,
                           SoruId = 12,
                           Cevaplar = "İl"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 35,
                           SoruId = 13,
                           Cevaplar = "İlçe"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 36,
                           SoruId = 14,
@@ -5740,47 +5747,47 @@ namespace DataAccessLayer
                           CevapId = 37,
                           SoruId = 15,
                           Cevaplar = "Haftada Bir"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 38,
                           SoruId = 15,
                           Cevaplar = "Haftada iki"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 39,
                           SoruId = 15,
                           Cevaplar = "Tek Seferlik"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 40,
                           SoruId = 15,
                           Cevaplar = "Diğer"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 41,
                           SoruId = 16,
                           Cevaplar = "30-80"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 42,
                           SoruId = 16,
                           Cevaplar = "80-120"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 43,
                           SoruId = 16,
                           Cevaplar = "120-200"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 44,
                           SoruId = 17,
                           Cevaplar = "İl"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 45,
                           SoruId = 18,
                           Cevaplar = "İlçe"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 46,
                           SoruId = 19,
@@ -5816,47 +5823,47 @@ namespace DataAccessLayer
                           CevapId = 51,
                           SoruId = 20,
                           Cevaplar = "Diğer"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 52,
                           SoruId = 21,
                           Cevaplar = "1"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 53,
                           SoruId = 21,
                           Cevaplar = "2"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 54,
                           SoruId = 21,
                           Cevaplar = "Diğer"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 55,
                           SoruId = 22,
                           Cevaplar = "30-80"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 56,
                           SoruId = 22,
                           Cevaplar = "80-120"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 57,
                           SoruId = 22,
                           Cevaplar = "120-200"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 58,
                           SoruId = 23,
                           Cevaplar = "İl"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 59,
                           SoruId = 24,
                           Cevaplar = "İlçe"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 60,
                           SoruId = 25,
@@ -5878,32 +5885,32 @@ namespace DataAccessLayer
                           CevapId = 63,
                           SoruId = 26,
                           Cevaplar = "120-200"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 64,
                           SoruId = 27,
                           Cevaplar = "Haftada Bir"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 65,
                           SoruId = 27,
                           Cevaplar = "Haftada İki"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 66,
                           SoruId = 27,
                           Cevaplar = "Tek seferlik"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 67,
                           SoruId = 27,
                           Cevaplar = "Diğer"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 68,
                           SoruId = 28,
                           Cevaplar = "İl"
-                      },new Cevap
+                      }, new Cevap
                       {
                           CevapId = 69,
                           SoruId = 29,
@@ -5915,73 +5922,73 @@ namespace DataAccessLayer
                           SoruId = 30,
                           Cevaplar = "Mesaj"
                       },
-                      /////Haşere İlaçlama
+                        /////Haşere İlaçlama
                         new Cevap
                         {
                             CevapId = 71,
                             SoruId = 31,
                             Cevaplar = "Hamam Böceği"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 72,
                             SoruId = 31,
                             Cevaplar = "Bit/Pire"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 73,
                             SoruId = 31,
                             Cevaplar = "Fare"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 74,
                             SoruId = 31,
                             Cevaplar = "Diğer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 75,
                             SoruId = 32,
                             Cevaplar = "30-80"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 76,
                             SoruId = 32,
                             Cevaplar = "80-120"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 77,
                             SoruId = 32,
                             Cevaplar = "120-200"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 78,
                             SoruId = 33,
                             Cevaplar = "Ev"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 79,
                             SoruId = 33,
                             Cevaplar = "Bahçe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 80,
                             SoruId = 33,
                             Cevaplar = "Bina"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 81,
                             SoruId = 33,
                             Cevaplar = "Diğer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 82,
                             SoruId = 34,
                             Cevaplar = "İl"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 83,
                             SoruId = 35,
                             Cevaplar = "İlçe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 84,
                             SoruId = 36,
@@ -6008,47 +6015,47 @@ namespace DataAccessLayer
                             CevapId = 88,
                             SoruId = 38,
                             Cevaplar = "5-15"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 89,
                             SoruId = 38,
                             Cevaplar = "15-30"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 90,
                             SoruId = 38,
                             Cevaplar = "30-50"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 91,
                             SoruId = 38,
                             Cevaplar = "60-80"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 92,
                             SoruId = 38,
                             Cevaplar = "diğer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 93,
                             SoruId = 39,
                             Cevaplar = "Evet"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 94,
                             SoruId = 39,
                             Cevaplar = "Hayır"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 95,
                             SoruId = 40,
                             Cevaplar = "İl"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 96,
                             SoruId = 41,
                             Cevaplar = "İlçe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 97,
                             SoruId = 42,
@@ -6095,54 +6102,54 @@ namespace DataAccessLayer
                             CevapId = 105,
                             SoruId = 43,
                             Cevaplar = "Gelinlik"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 106,
                             SoruId = 43,
                             Cevaplar = "Diğer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 107,
                             SoruId = 44,
                             Cevaplar = "Evet"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 108,
                             SoruId = 44,
                             Cevaplar = "Hayır"
                         },
-                        
+
                         new Cevap
                         {
                             CevapId = 109,
                             SoruId = 45,
                             Cevaplar = "1-3"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 110,
                             SoruId = 45,
                             Cevaplar = "3-5"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 111,
                             SoruId = 45,
                             Cevaplar = "5-7"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 112,
                             SoruId = 45,
                             Cevaplar = "diğer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 113,
                             SoruId = 46,
                             Cevaplar = "İl"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 114,
                             SoruId = 47,
                             Cevaplar = "İlçe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 115,
                             SoruId = 48,
@@ -6154,102 +6161,102 @@ namespace DataAccessLayer
                             CevapId = 116,
                             SoruId = 49,
                             Cevaplar = "Yatak"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 117,
                             SoruId = 49,
                             Cevaplar = "Berjer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 118,
                             SoruId = 49,
                             Cevaplar = "İkili Koltuk"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 119,
                             SoruId = 49,
                             Cevaplar = "Üçlü Koltuk"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 120,
                             SoruId = 49,
                             Cevaplar = "L Koltuk "
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 121,
                             SoruId = 49,
                             Cevaplar = "Araç içi Koltuk"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 122,
                             SoruId = 49,
                             Cevaplar = "Sandalye"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 123,
                             SoruId = 50,
                             Cevaplar = "Yaslanma yeri minderli"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 124,
                             SoruId = 50,
                             Cevaplar = "Oturma yeri minderli"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 125,
                             SoruId = 50,
                             Cevaplar = "İkisi de minderli"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 126,
                             SoruId = 50,
                             Cevaplar = "Mindersiz"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 127,
                             SoruId = 51,
                             Cevaplar = "1"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 128,
                             SoruId = 51,
                             Cevaplar = "2"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 129,
                             SoruId = 51,
                             Cevaplar = "3"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 130,
                             SoruId = 51,
                             Cevaplar = "4"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 131,
                             SoruId = 51,
                             Cevaplar = "5"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 132,
                             SoruId = 51,
                             Cevaplar = "6"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 133,
                             SoruId = 51,
                             Cevaplar = "Diğer"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 134,
                             SoruId = 52,
                             Cevaplar = "İl"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 135,
                             SoruId = 53,
                             Cevaplar = "İlçe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 136,
                             SoruId = 54,
@@ -6261,47 +6268,47 @@ namespace DataAccessLayer
                             CevapId = 137,
                             SoruId = 55,
                             Cevaplar = "1+1"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 138,
                             SoruId = 55,
                             Cevaplar = "2+1"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 139,
                             SoruId = 55,
                             Cevaplar = "3+1"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 140,
                             SoruId = 55,
                             Cevaplar = "4+1"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 141,
                             SoruId = 55,
                             Cevaplar = "Daha Büyük Ev"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 142,
                             SoruId = 55,
                             Cevaplar = "Bina Dış Cephe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 143,
                             SoruId = 55,
                             Cevaplar = "Mağaza"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 144,
                             SoruId = 56,
                             Cevaplar = "İl"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 145,
                             SoruId = 57,
                             Cevaplar = "İlçe"
-                        },new Cevap
+                        }, new Cevap
                         {
                             CevapId = 146,
                             SoruId = 58,

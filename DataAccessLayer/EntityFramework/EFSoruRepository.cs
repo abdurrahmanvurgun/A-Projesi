@@ -11,5 +11,8 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EFSoruRepository : GenericRepository<Soru>, ISoruDal
     {
+        public EFSoruRepository(DatabaseContext db) : base(db)
+        {
+        }
     }
 }
