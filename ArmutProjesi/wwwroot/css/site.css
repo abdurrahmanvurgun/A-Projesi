@@ -2,9 +2,18 @@
 
 
 
-#btn-bg {
-background-color: #348E38;
-color:white;
+.bg-image img{
+    background-color: #348E38;
+    width:100%auto;
+
+    height:50vh;
+    background-attachment:fixed;
+    background-blend-mode:soft-light;
+    background-clip:border-box;
+    background-origin:border-box;
+    background-position:center;
+    background-repeat:no-repeat;
+    color: white;
 }
 
 .blur {
