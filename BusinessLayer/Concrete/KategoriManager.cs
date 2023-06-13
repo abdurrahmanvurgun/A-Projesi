@@ -14,10 +14,10 @@ namespace BusinessLayer.Concrete
     public class KategoriManager:IKategoriService
     {
         EFKategoriRepository efKategoriRepository ;
-        //public KategoriManager()
-        //{
-        //    efKategoriRepository = new EFKategoriRepository;
-        //}
+        public KategoriManager(EFKategoriRepository _efKategoriRepository)
+        {
+            efKategoriRepository = _efKategoriRepository;
+        }
 
         public void KategoriAdd(Kategori kategori)
         {
