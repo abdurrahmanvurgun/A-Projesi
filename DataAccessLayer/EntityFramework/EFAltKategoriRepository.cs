@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EFAltKategoriRepository : GenericRepository<AltKategori>,IAltKategoriDal
+    public class EFAltKategoriRepository : GenericRepository<AltKategori>, IAltKategoriDal
     {
+        public EFAltKategoriRepository(DatabaseContext db) : base(db)
+        {
+        }
     }
 }

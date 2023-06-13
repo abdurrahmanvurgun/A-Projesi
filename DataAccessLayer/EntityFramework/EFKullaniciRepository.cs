@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EFKullaniciRepository:GenericRepository<Kullanici>,IKullaniciDal
+    public class EFKullaniciRepository : GenericRepository<Kullanici>, IKullaniciDal
     {
+        public EFKullaniciRepository(DatabaseContext db) : base(db)
+        {
+        }
     }
 }

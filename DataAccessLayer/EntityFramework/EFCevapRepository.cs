@@ -11,5 +11,8 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EFCevapRepository : GenericRepository<Cevap>, ICevapDal
     {
+        public EFCevapRepository(DatabaseContext db) : base(db)
+        {
+        }
     }
 }
