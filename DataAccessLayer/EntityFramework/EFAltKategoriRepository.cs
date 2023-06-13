@@ -13,6 +13,7 @@ namespace DataAccessLayer.EntityFramework
     {
         public EFAltKategoriRepository(DatabaseContext db) : base(db)
         {
+
         }
     }
 }
