@@ -49,10 +49,5 @@ namespace EntityLayer
         public virtual KullaniciRol KullaniciRol { get; set; }
     }
 
-
-    //****************
-
-
-
 }
 

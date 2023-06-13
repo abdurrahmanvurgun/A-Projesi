@@ -6,7 +6,7 @@ namespace ArmutProjesi.Controllers
     {
         public IActionResult Login()//Giriş 
         {
-            return RedirectToAction("Account", "Profile");
+            return View();
         }
         public IActionResult Register()//Kayıt OL
         {
