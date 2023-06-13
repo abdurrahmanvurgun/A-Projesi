@@ -4451,6 +4451,7 @@ namespace DataAccessLayer
                           Sorular = "Detay"
                       },
 
+
                       /////Tadilat, Dekorasyon ve İnşaat Hizmetleri
                       //Boya, badana
                        new Soru
