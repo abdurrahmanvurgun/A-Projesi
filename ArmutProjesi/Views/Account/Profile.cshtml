@@ -4,86 +4,156 @@
 }
 
 
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-success bg-opacity-75 sidebar collapse p-3">
+    <div class="position-sticky pt-3">
+        <h2>Kişisel Bilgiler</h2>
+        <ul class="nav flex-column">
+            <li class="nav-item lh-lg fs-6">
+                <a class="nav-link" aria-current="page" href="/account/Profile">
+                    <span data-feather="home"></span>
+                    <i class="bi bi-gear"></i>  Kişisel Ayarlar
+                </a>
+            </li>
+            <li class="nav-item lh-lg fs-6">
+                <a class="nav-link" href="#">
+                    <span data-feather="file"></span>
+                    <i class="bi bi-gear-wide-connected"></i>   Servis Ayarları
+                </a>
+            </li>
+            <li class="nav-item  lh-lg fs-6">
+                <a class="nav-link" href="/account/Wallet">
+                    <span data-feather="shopping-cart"></span>
+                    <i class="bi bi-credit-card-2-front"></i>   Cuzdanım
+                </a>
+            </li>
 
-<div class="container lb-disable-scrolling">
-    <main class="row">
-        <div class="col-12">
-            <h2> Aylık Ödeme Bilgileriniz</h2>
-        </div>
-        <div class="col-12">
-            <div class="py-2 text-center">
-                <img class="d-block mx-auto mb-4 figure-img" src="~/img/profile-bg.svg" alt="Profil Resmi" width="200" height="200">
+            <li class="nav-item  lh-lg fs-6">
+                <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    <i class="bi bi-repeat"></i>    Hizmet Al
+                </a>
+            </li>
+
+        </ul>
+        <hr class="shadow" />
+        <ul class="nav flex-column mb-2">
+
+            <li class="nav-item  lh-lg fs-6">
+                <a class="nav-link" href="#">
+                    <span data-feather="bar-chart-2"></span>
+                    <i class="bi bi-info-square"></i>    Tanıtım Materyalleri
+                </a>
+            </li>
+            <li class="nav-item  lh-lg fs-6">
+                <a class="nav-link" href="#">
+                    <span data-feather="layers"></span>
+                    <i class="bi bi-question-square"></i>    Yardım ve Destek
+                </a>
+            </li>
+            <li class="nav-item  lh-lg fs-6">
+                <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    <i class="bi bi-badge-vr"></i>  Veri ve Gizlilik
+                </a>
+            </li>
+            <li class="nav-item  lh-lg fs-6">
+            <li class="nav-item  lh-lg fs-6">
+                <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    <i class="bi bi-box-arrow-right"></i>   Çıkış
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+    <div class="container lb-disable-scrolling">
+        <main class="row">
+            <div class="col-12">
                 <h2>Profil Ayarlarınız</h2>
-            </div>
-            <div class="row g-5">
-                <div class="offset-sm-3 col-md-7">
+                <hr />
+                <div class="row g-5">
+                    <div class="py-2 text-center">
+                        <img class="d-block mx-auto mb-4 figure-img" src="~/img/profile-bg.svg" alt="Profil Resmi" width="200" height="200">
+                    </div>
+                    <div class="input-group offset-sm-3 col-md-7">
+                        <input type="file" class="form-control" id="inputGroupFile">
+                    </div>
+                </div>
+                <br />
+                <div class="row g-5">
+                    <div class="offset-sm-3 col-md-7">
 
-                    <form class="needs-validation" method="post" novalidate>
-                        <div class="row g-3">
-                            <div class="col-sm-12">
-                                <label for="firstName" class="form-label">Adınız</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Adınız" value="" required>
-                                <div class="invalid-feedback">
-                                    Ad alanı boş bırakılamaz.
+                        <form class="needs-validation" method="post" novalidate>
+                            <div class="row g-3">
+                                <div class="col-sm-12">
+                                    <label for="firstName" class="form-label">Adınız</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="Adınız" value="" required>
+                                    <div class="invalid-feedback">
+                                        Ad alanı boş bırakılamaz.
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-sm-12">
-                                <label for="lastName" class="form-label">Soyadınız</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                                <div class="invalid-feedback">
-                                    Soyadı alanı boş bırakılamaz.
+                                <div class="col-sm-12">
+                                    <label for="lastName" class="form-label">Soyadınız</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Soyadı alanı boş bırakılamaz.
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-12">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                                <div class="invalid-feedback">
-                                    Lütfen Mail adrsinizi doğru giriniz.
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                    <div class="invalid-feedback">
+                                        Lütfen Mail adrsinizi doğru giriniz.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <label for="password" class="form-label">Eski Şifreniz</label>
-                                <input type="password" class="form-control" id="password" placeholder="***">
-                                <div class="invalid-feedback">
-                                    Lütfen Eski Şifrenizi doğru giriniz.
+                                <div class="col-12">
+                                    <label for="password" class="form-label">Eski Şifreniz</label>
+                                    <input type="password" class="form-control" id="password" placeholder="***">
+                                    <div class="invalid-feedback">
+                                        Lütfen Eski Şifrenizi doğru giriniz.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <label for="password" class="form-label">Yeni Şifre</label>
-                                <input type="password" class="form-control" id="password" placeholder="">
-                                <div class="invalid-feedback">
-                                    Lütfen yeni Şifrenizi doğru giriniz.
+                                <div class="col-12">
+                                    <label for="password" class="form-label">Yeni Şifre</label>
+                                    <input type="password" class="form-control" id="password" placeholder="">
+                                    <div class="invalid-feedback">
+                                        Lütfen yeni Şifrenizi doğru giriniz.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <label for="password" class="form-label">Yeni Şifre Tekrarı</label>
-                                <input type="password" class="form-control" id="password" placeholder="">
-                                <div class="invalid-feedback">
-                                    Lütfen yeni Şifrenizi doğru giriniz.
+                                <div class="col-12">
+                                    <label for="password" class="form-label">Yeni Şifre Tekrarı</label>
+                                    <input type="password" class="form-control" id="password" placeholder="">
+                                    <div class="invalid-feedback">
+                                        Lütfen yeni Şifrenizi doğru giriniz.
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-12">
-                                <label for="address" class="form-label">Adresiniz</label>
-                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-                                <div class="invalid-feedback">
-                                    Lütfen adres alanını doldurunuz.
+                                <div class="col-12">
+                                    <label for="address" class="form-label">Adresiniz</label>
+                                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                    <div class="invalid-feedback">
+                                        Lütfen adres alanını doldurunuz.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-success w-100 btn-lg-square" type="submit"> Kaydet </button>
                                 </div>
                             </div>
-
-                            <div class="col-12">
-                                <button class="btn btn-success w-100 btn-lg-square" type="submit"> Kaydet </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-</div>
+    </div>
+
+</main>
 
 <script src="~/js/form-validation.js"></script>
 

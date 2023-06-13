@@ -31,91 +31,33 @@
 </head>
 <body>
 
-    <header class="navbar  bg-success bg-opacity-50 sticky-top flex-md-nowrap d-blok mb-2 pb-3 shadow">
-        <a class="navbar-brand fs-4 col-md-3 col-lg-2 me-2 px-3 logo" href="#">Ayva</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-
+    <header class="navbar sticky-top navbar-expand-lg bg-light shadow">
+        <a href="index.html" class="btn d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0">Gardener</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link fs-4 px-3" href="#">Hesap</a>
-            </div>
+        <div class=" collapse navbar-collapse d-md-flex justify-content-md-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="btn btn-outline-success nav-item lh-lg fs-6 text-black">
+                    <a class="nav-link fs-4 px-3 text-dark" href="/account/Jobs"><i class="bi bi-ui-checks"></i> İşlerim</a>
+                </li>
+                <li class="btn btn-outline-success nav-item lh-lg fs-6">
+                    <a class="nav-link fs-4 px-3 text-dark" href="/account/Services"><i class="bi bi-ui-radios-grid"></i> Servislerim</a>
+                </li>
+                <li class="btn btn-outline-success nav-item lh-lg fs-6">
+                    <a class="nav-link fs-4 px-3 text-dark" href="/account/Profile"><i class="bi bi-person-vcard"></i> Hesap</a>
+                </li>
+            </ul>
         </div>
     </header>
 
     <div class="container-fluid pt-10 mt-xl-1 ">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-success bg-opacity-75 sidebar collapse p-3">
-                <div class="position-sticky pt-3">
-                    <h2>Kişisel Bilgiler</h2>
-                    <ul class="nav flex-column">
-                        <li class="nav-item lh-lg fs-6">
-                            <a class="nav-link" aria-current="page" href="/account/Profile">
-                                <span data-feather="home"></span>
-                                <i class="bi bi-gear"></i>  Kişisel Ayarlar                                
-                            </a>
-                        </li>
-                        <li class="nav-item lh-lg fs-6">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file"></span>
-                                <i class="bi bi-gear-wide-connected"></i>   Servis Ayarları                                 
-                            </a>
-                        </li>
-                        <li class="nav-item  lh-lg fs-6">
-                            <a class="nav-link" href="/account/Wallet">
-                                <span data-feather="shopping-cart"></span>                               
-                                <i class="bi bi-credit-card-2-front"></i>   Cuzdanım
-                            </a>
-                        </li>
-
-                        <li class="nav-item  lh-lg fs-6">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>                              
-                                <i class="bi bi-repeat"></i>    Hizmet Al
-                            </a>
-                        </li>
-                       
-                    </ul>
-                    <hr class="shadow" />
-                    <ul class="nav flex-column mb-2">
-
-                        <li class="nav-item  lh-lg fs-6">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>                                
-                                <i class="bi bi-info-square"></i>    Tanıtım Materyalleri
-                            </a>
-                        </li>
-                        <li class="nav-item  lh-lg fs-6">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers"></span>                                 
-                                <i class="bi bi-question-square"></i>    Yardım ve Destek
-                            </a>
-                        </li>
-                        <li class="nav-item  lh-lg fs-6">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>                                 
-                                <i class="bi bi-badge-vr"></i>  Veri ve Gizlilik
-                            </a>
-                        </li>
-                        <li class="nav-item  lh-lg fs-6">
-                        <li class="nav-item  lh-lg fs-6">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>                                 
-                                <i class="bi bi-box-arrow-right"></i>   Çıkış
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                @RenderBody()
-
-
-            </main>
+          
+            @RenderBody()
         </div>
     </div>
 
