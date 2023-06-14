@@ -73,22 +73,25 @@
 }
 
 /* Modal Close Button */
-/*
-$softorange: #F4A259;
-$tomatored: #F25C66;
-$mediumblu: #1E272D;
-*/
-
-body {
-    background-color: $mediumblu;
+.ayva-modal__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: black;
+    cursor: pointer;
 }
 
 .close-container {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     margin: auto;
     width: 50px;
     cursor: pointer;
 }
+
+
 
 .leftright {
     height: 4px;
