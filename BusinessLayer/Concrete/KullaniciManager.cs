@@ -30,9 +30,9 @@ namespace BusinessLayer.Concrete
         {
             _kullaniciDal.Update(kullanici);
         }
-        public Kullanici GetById(int id)
+        public Kullanici GetById(Guid guid)
         {
-            return _kullaniciDal.GetById(id);
+            return _kullaniciDal.GetById(guid);
         }
         public List<Kullanici> kullaniciList()
         {
