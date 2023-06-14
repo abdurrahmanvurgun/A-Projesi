@@ -1,5 +1,7 @@
+using AutoMapper;
 using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace ArmutProjesi
 {
@@ -10,13 +12,15 @@ namespace ArmutProjesi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+          
             builder.Services.AddDbContext<DatabaseContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
                 //opt.UseLazyLoadingProxies(); baðlantýlý tablolar oldugunda kullanýlýyor.
             });
 
+          
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

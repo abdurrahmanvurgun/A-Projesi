@@ -1,14 +1,7 @@
 ﻿using Armut.Model;
 using EntityLayer;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using EntityLayer.AdresModelleri;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAccessLayer
 {
@@ -30,6 +23,9 @@ namespace DataAccessLayer
         public DbSet<Ulke> Ulkeler { get; set; }
         public DbSet<Soru> Sorular { get; set; }
         public DbSet<Cevap> Cevaplar { get; set; }
+
+        
+
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
 

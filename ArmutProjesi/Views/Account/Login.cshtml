@@ -1,4 +1,7 @@
-﻿<link href="~/css/loginstyle.css" rel="stylesheet" />
+﻿@model LoginModel
+
+
+<link href="~/css/loginstyle.css" rel="stylesheet" />
 
 <div class="p-0" style="background-image: url(/img/login-bg.jpg);">
 	<section class="ftco-section">
@@ -8,22 +11,25 @@
 			<div class="row justify-content-center" style="z-index:1;">
 				<div class="col-md-6 text-center mb-5">
 					<h2 class="heading-section">GİRİŞ</h2>
+					<div asp-validation-summary="ModelOnly" class="text-danger small">
+					</div>
 				</div>
 			</div>
 			<div class="row justify-content-center" style="z-index:1;">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 						<h3 class="mb-4 text-center">Hesabınız var mı ?</h3>
-						<form action="#" class="signin-form">
+
+						<form asp-action="Login" method="post" class="signin-form">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Kullanıcı Adı" required>
+								<input type="text" asp-for=KullaniciAdi class="form-control" placeholder="Kullanıcı Adı" required>
 							</div>
 							<div class="form-group">
-								<input id="password-field" type="password" class="form-control" placeholder="Şifre" required>
+								<input id="password-field" asp-for=Sifre type="password" class="form-control" placeholder="Şifre" required>
 								<span toggle="#password-field" class="bi bi-eye field-icon toggle-password"></span>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="form-control btn btn-primary submit px-3">Kayıt Ol</button>
+								<button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
 							</div>
 							<div class="form-group d-md-flex">
 								<div class="w-50">
