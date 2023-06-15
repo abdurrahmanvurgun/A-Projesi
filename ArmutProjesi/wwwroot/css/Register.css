@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: yellowgreen
+    background: linear-gradient(#fff, #cff09e,#a8dba8);
 }
 
 .background {
@@ -11,121 +11,157 @@
     right: 50%
 }
 
-    .background .shape {
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        border-radius: 50%
-    }
-.shape:first-child {
-    background: linear-gradient(#1845ad,#23a2f6);
-    left: -80px;
-    right: -80px
+div .background .shape {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%
 }
-.shape:last-child {
+
+div>.background>.shape>.shape1{
+    background: linear-gradient(#216c08,#62f707);
+    left: -50px;
+    bottom: -400px
+}
+.background .shape .shape2{
+    background: linear-gradient(#216c08,#62f707);
+    left: -150px;
+    bottom: -630px
+}
+
+.background .shape .shape3 {
     background: linear-gradient(to right,#ff512f,#f09819);
-    right: -30px;
-    bottom: -80px;
+    right: -120px;
+    bottom: -659px;
 }
+.background .shape .shape4 {
+    background: linear-gradient(to right,#ff512f,#f09819);
+    right: -120px;
+    bottom: -659px;
+}
+
+
 form {
-    width: 700px;
-    height:700px;
+    width: 40vw;
+    height: fit-content;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 63%;
+    top: 60%;
     left: 50%;
-    border-radius:10px;
-    backdrop-filter:blur(10px);
-    border:2px solid rgba(255,255,255,0.1);
-    box-shadow:0 0 40px rgba(8,7,16,0.6);
-    padding:10px 95px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: inherit;
 }
-form *{
-    font-family:"Poppins",sans-serif;
-    color:#ffffff;
-    letter-spacing:0.5px;
-    outline:none;
-    border:none;
+
+    form * {
+        font-family: "Poppins",sans-serif;
+        color: #ff512f;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
+
+    form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+    }
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
 }
-form h3{
-    font-size:32px;
-    font-weight:500;
-    line-height:42px;
-    text-align:center;
-}
-label{
-    display:block;
-    margin-top:30px;
-    font-size:16px;
-    font-weight:500;   
-}
+
 input {
     display: block;
     height: 50px;
     width: 100%;
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 3px;
+    background-color: rgb(255,255,255,0.4);
+    border-radius: 2rem;
+    border: 1px solid #ff512f;
     padding: 0 10px;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 300;
+    color: black;
 }
-::placeholder{
-    color:#e5e5e5;
+
+::placeholder {
+    color: lightslategray;
+    padding-left: 10px;
 }
 
 
 #btnkayıt {
-/*    width: 120px;
-    height: 50px;
-    background-color: yellowgreen;
-    color: white;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    background-color: #ff512f;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    border-radius: 12rem;
+    cursor: pointer;
     animation: mymove 2s infinite;
-    margin: auto;*/
-    margin-top:10px;
-    margin-bottom:27px;
-    width:100%;
-    background-color:darkslategrey;
-    color:#080710;
-    padding:0px 0;
-    font-size:18px;
-    font-weight:600;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-@keyframes mymove {
-    50% {
-        box-shadow: 5px 5px 5px green;
-    }
 }
 
 #iconkayıt {
-    margin-left: 15rem;
+    margin-left: 10rem;
     margin-right: 11rem;
     margin-bottom: 2rem;
-    /* margin: auto; */
-    /* margin-top: 30px; */
     display: flex;
     align-content: flex-start;
     justify-content: center;
-    margin-left: 160px;
-}
-#iconkayıt div{
-    background:yellowgreen;
-    width:50px;
-    border-radius:10px;
-    padding:5px 5px 5px 5px;
-  /*  background-color:rgba(255,255,255,0.27);*/
-    color:#eaf0fb;
-    text-align:center;
+    background-color: none;
 }
 
-    #iconkayıt div:hover {
-        background-color: rgba(255,255,255,0.47);
+    #iconkayıt div {
+        
+        width: 6rem;
+        height:3rem;
+        font-size:1.5rem;
+        line-height:1.5;
+        text-align:center;
+        border-radius: 3rem;
+        padding: 5px 5px 5px 5px;
+        /*  background-color:rgba(255,255,255,0.27);*/
+        color: #eaf0fb;
+        text-align: center;
     }
+
+    #iconkayıt div {
+        background: #ff512f;
+        width: 6rem;
+        border-radius: 10px;
+        padding: 5px 5px 5px 5px;
+        /*  background-color:rgba(255,255,255,0.27);*/
+        color: #eaf0fb;
+        text-align: center;
+        font-size: 1.5rem;
+        animation: .2s ease-in-out;
+    }
+
+        #iconkayıt div:hover {
+            background-color: rgba(255,255,255,0.47);
+            color: #ff512f;
+            text-align: center;
+            border-radius: 10px;
+            animation: .4s ease-in-out;
+            border: 5px solid #ff512f;
+        }
 
 #bodykayıt {
     padding-bottom: 0;
+}
+
+.iconkayıt-item {
+    transition: .5s;
+   background-color:transparent;
 }

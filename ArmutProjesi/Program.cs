@@ -1,7 +1,9 @@
-using AutoMapper;
+ï»¿using AutoMapper;
 using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using ArmutProjesi.Data;
 
 namespace ArmutProjesi
 {
@@ -10,14 +12,14 @@ namespace ArmutProjesi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
           
             builder.Services.AddDbContext<DatabaseContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-                //opt.UseLazyLoadingProxies(); baðlantýlý tablolar oldugunda kullanýlýyor.
+                //opt.UseLazyLoadingProxies(); baï¿½lantï¿½lï¿½ tablolar oldugunda kullanï¿½lï¿½yor.
             });
 
           

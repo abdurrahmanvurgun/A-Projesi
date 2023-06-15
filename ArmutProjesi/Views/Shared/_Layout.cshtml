@@ -49,26 +49,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Anasayfa</a>
-                    <a asp-controller="Home" asp-action="Hakkimizda" class="nav-item nav-link">Hakkımızda</a>
+                    <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active btn-chose">Anasayfa</a>
+                    <a asp-controller="Home" asp-action="Hakkimizda" class="nav-item nav-link btn-chose">Hakkımızda</a>
                     <div class="nav-item dropdown">
                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Hizmetler</a>
-                        <div class="dropdown-menu bg-light m-0">
-                           
-                           <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item">Temizlik</a>
-                            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item">Tadilat</a>
-                            <a asp-controller="Home" asp-action="Ozelders" class="dropdown-item">Özel Ders</a>
-                            <a asp-controller="Home" asp-action="Saglik" class="dropdown-item">Sağlık</a>
-                            <a asp-controller="Home" asp-action="Diger" class="dropdown-item">Diğer</a>
+                        <div class="dropdown-menu bg-light m-0 text-center">
+                            <a asp-controller="Home" asp-action="Temizlik" class="dropdown-item nav-link btn-chose">Temizlik</a>
+                            <a asp-controller="Home" asp-action="Tadilat" class="dropdown-item nav-link btn-chose">Tadilat</a>
+                            <a asp-controller="Home" asp-action="Ozelders" class="dropdown-item nav-link btn-chose">Özel Ders</a>
+                            <a asp-controller="Home" asp-action="Saglik" class="dropdown-item nav-link btn-chose">Sağlık</a>
+                            <a asp-controller="Home" asp-action="Diger" class="dropdown-item nav-link btn-chose">Diğer</a>
                         </div>
                     </div>
-                    <a asp-controller="Home" asp-action="Iletisim" class="nav-item nav-link">İletişim</a>
-                    <a asp-controller="Home" asp-action="Yardim" class="nav-item nav-link">Yardım</a>
-                </div>
-
-               <a asp-controller="Home" asp-action="HizmetVer" id="btn-bg" class="btn btn-outline-success py-4 px-lg-4 rounded-0 d-none d-lg-block">Hizmet Ver<i class="bi bi-arrow-right ms-3"></i></a>
-                <a href="/account/login" id="btn-bg" class="btn py-4 px-lg-4 rounded-0 d-none d-lg-block">Giriş<i class="bi bi-box-arrow-in-right ms-3"></i></a>
-              
+                    <a asp-controller="Home" asp-action="Iletisim" class="nav-item nav-link btn-chose">İletişim</a>
+                    <a asp-controller="Home" asp-action="Yardim" class="nav-item nav-link btn-chose">Yardım</a>
+                    <a asp-controller="Home" asp-action="HizmetVer" class="btn btn-chose nav-link">Hizmet Ver<i class="bi bi-arrow-right"></i></a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-chose nav-link "><i class="bi bi-box-arrow-in-right"></i>  Giriş</a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-chose nav-link "><i class="bi bi-plus-square "></i>  Kayıt Ol</a>
+                </div>               
             </div>
         </nav>
         <!-- Navbar End -->

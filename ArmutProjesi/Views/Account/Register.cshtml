@@ -1,84 +1,85 @@
-﻿<link href="~/css/register.css" rel="stylesheet" />
+﻿@{
 
-  <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/css/register.css" rel="stylesheet" />
+
+<div class="background">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+</div>
 
 <div class="container d-flex justify-content-center align-items-center vh-100" id="bodykayıt">
-    <form >
-        <h3>Kayıt Olun</h3>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row m-4">
-                <div class="col">
-                    <div class="form-outline">
-                        <label class="form-label" for="form3Example1">İsminiz</label>
-                        <input type="text" id="isim" placeholder="İsminiz" />
+    <form>
 
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <label class="form-label" for="form3Example2">Soyisminiz</label>
-                    <input type="text" id="soyisim" placeholder="Soyisminiz" />
-
-                    </div>
-                </div>
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="grid  justify-content-start">
+            <div class="form-outline  m-4">
+                <h3>Kayıt Olun</h3>
+            </div>
+            <div class="form-outline  m-4">
+                <label class="form-label" for="form3Example1">İsim</label>
+                <input type="text" id="isim" placeholder="İsim" />
             </div>
 
+            <div class="form-outline m-4">
+                <label class="form-label " for="form3Example2">Soyisim</label>
+                <input type="text" id="soyisim" placeholder="Soyisim" />
+            </div>
             <!-- Email input -->
             <div class="form-outline m-4">
                 <label class="form-label" for="form3Example3">Email Adres</label>
-            <input type="email" id="email" placeholder="E-Mail" />
+                <input type="email" id="email" placeholder="ornekmail@ornek.com" />
 
             </div>
+            <div class="form-outline m-4">
+                <label class="form-label" for="form3Example3">Telefon</label>
+                <input type="tel" id="telefon" placeholder="5123456789" />
 
+            </div>
             <!-- Password input -->
             <div class="form-outline m-4">
                 <label class="form-label" for="form3Example4">Şifre</label>
-            <input type="password" id="sifre" placeholder="sifre" style="padding-right:2px;" />
+                <input type="password" id="sifre" placeholder="Şifre" style="padding-right:2px;" />
 
             </div>
+        </div>
 
-             <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
+
+        <!-- Submit button -->
+        <div class="form-outline m-4">
+            <button id="btnkayıt" type="submit" class="btn mb-1 " style="">Kayıt Ol</button>
+        </div>
+        <!-- Checkbox -->
+        <div class="form-check d-flex justify-content-center">
             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
             <label class="form-check-label" for="form2Example33">
-            Haber Bültenimize Abone Ol
+                Mail Bültenimize Abone Ol
             </label>
-            </div>
-            
-            <!-- Submit button -->
-       <div class="row" id="btnkayıt">           
-                <button type="submit" class="btn btn-block mb-4 " style="">Kayıt Ol</button>                
-            </div>
-            
-
-            <!-- Register buttons -->
-            <div class="text-center">
-            <p>or sign up with:</p>
-            </div>
-            <div class="text-center" id="iconkayıt">
-              
-            <br /><br />
-                <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <div class="fab fa-facebook-f"></div>
-                </button>
-
-                <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <div class="fab fa-google"></div>
-                </button>
-
-                <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <div class="fab fa-twitter"></div>
-                </button>
+        </div>
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Diğer kayıt olma tercihleri <b>:</b></p>
+        </div>
+        <div class="text-center" id="iconkayıt">
+            <button type="button" class=" iconkayıt-item  btn-floating mx-1">
+                <div class="fab fa-facebook-f"></div>
+            </button>
+            <button type="button" class=" iconkayıt-item btn-floating mx-1">
+                <div class="fab fa-google"></div>
+            </button>
+            <button type="button" class=" iconkayıt-item btn-floating mx-1">
+                <div class="fab fa-twitter"></div>
+            </button>
+        </div>
+    </form>
+</div>
 
 
-            </div>
-        </form>
-    </div>
 
 
-  
 
-    

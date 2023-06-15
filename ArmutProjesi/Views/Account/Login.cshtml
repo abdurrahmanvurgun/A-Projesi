@@ -1,61 +1,69 @@
 ﻿@model LoginModel
 
+@{
 
-<link href="~/css/loginstyle.css" rel="stylesheet" />
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<div class="p-0" style="background-image: url(/img/login-bg.jpg);">
-	<section class="ftco-section">
-		
-		<div class="container">
-			
-			<div class="row justify-content-center" style="z-index:1;">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">GİRİŞ</h2>
-					<div asp-validation-summary="ModelOnly" class="text-danger small">
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center" style="z-index:1;">
-				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0">
-						<h3 class="mb-4 text-center">Hesabınız var mı ?</h3>
 
-						<form asp-action="Login" method="post" class="signin-form">
-							<div class="form-group">
-								<input type="text" asp-for=KullaniciAdi class="form-control" placeholder="Kullanıcı Adı" required>
-							</div>
-							<div class="form-group">
-								<input id="password-field" asp-for=Sifre type="password" class="form-control" placeholder="Şifre" required>
-								<span toggle="#password-field" class="bi bi-eye field-icon toggle-password"></span>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
-							</div>
-							<div class="form-group d-md-flex">
-								<div class="w-50">
-									<div class="mb-3 form-check">
-										<input type="checkbox" class="form-check-input"  id="exampleCheck1">
-										<label class="form-check-label" for="exampleCheck1">Beni Hatırla</label>
-									</div>
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Şifremi Unuttum</a>
-								</div>
-							</div>
-						</form>
-						<p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
-						<div class="social d-flex text-center">
-							<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="icon-logo-facebook mr-2"></span> Facebook</a>
-							<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+<link href="~/css/register.css" rel="stylesheet" />
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
- 
+<div class="background">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
 </div>
+
+<div class="container d-flex justify-content-center align-items-center vh-100" id="bodykayıt">
+    <form asp-action="Login" method="post">
+        <div class="grid  justify-content-start">
+            <div class="form-outline m-4">
+                <h3>Giriş Yap</h3>
+                <div asp-validation-summary="ModelOnly" class="text-danger small">
+                </div>
+            </div>
+
+            <div class="form-outline m-4">
+                <label class="form-label" for="form3Example1">Kullanıcı Adınız</label>
+                <input type="text" asp-for="KullaniciAdi" class="form-control" placeholder="Kullanıcı Adı" required>
+            </div>
+        </div>
+        <div class="form-outline m-4">
+            <label class="form-label" for="form3Example2">Şifre</label>
+            <input id="password-field" asp-for="Sifre" type="password" class="form-control" placeholder="Şifre" required style="padding-right:2px;">
+            <span toggle="#password-field" class="bi bi-eye field-icon toggle-password"></span>
+        </div>
+        <div class="form-outline m-4">
+            <button type="submit" id="btnkayıt" class="btn mb-1 ">Giriş Yap</button>
+        </div>
+        <div class="form-check d-flex justify-content-center">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Beni Hatırla</label>
+            </div>
+
+            <div class="w-50 pl-2 text-md-right">
+                <a href="#" style="color: #fff">Şifremi Unuttum</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <p>Diğer Giriş tercihleri <b>:</b></p>
+        </div>
+        <div class="text-center" id="iconkayıt">
+            <button type="button" class=" iconkayıt-item  btn-floating mx-1">
+                <div class="fab fa-facebook-f"></div>
+            </button>
+            <button type="button" class=" iconkayıt-item btn-floating mx-1">
+                <div class="fab fa-google"></div>
+            </button>
+            <button type="button" class=" iconkayıt-item btn-floating mx-1">
+                <div class="fab fa-twitter"></div>
+            </button>
+        </div>
+    </form>
+</div>
+
 @section Scripts{
     <script src="~/js/loginmain.js"></script>
 }
