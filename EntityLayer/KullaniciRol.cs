@@ -10,6 +10,7 @@ namespace Armut.Model
         [Key]
         public int RolId { get; set; }
         public Guid KullaniciId { get; set; }
+
         [ForeignKey(nameof(KullaniciId))]
         public virtual Kullanici Kullanici { get; set; }
         public virtual Rol Rol { get; set; }
