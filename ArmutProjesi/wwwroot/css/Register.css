@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: yellowgreen
+    background-color: #f2c700;
 }
 
 .background {
@@ -18,7 +18,7 @@
         border-radius: 50%
     }
 .shape:first-child {
-    background: linear-gradient(#1845ad,#23a2f6);
+    background: linear-gradient(#ff512f,#f09819);
     left: -80px;
     right: -80px
 }
@@ -33,9 +33,9 @@ form {
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 63%;
+    top: 60%;
     left: 50%;
-    border-radius:10px;
+    border-radius:100px;
     backdrop-filter:blur(10px);
     border:2px solid rgba(255,255,255,0.1);
     box-shadow:0 0 40px rgba(8,7,16,0.6);
@@ -56,7 +56,7 @@ form h3{
 }
 label{
     display:block;
-    margin-top:30px;
+   /* margin-top:30px;*/
     font-size:16px;
     font-weight:500;   
 }
@@ -64,15 +64,16 @@ input {
     display: block;
     height: 50px;
     width: 100%;
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 3px;
+    background-color: rgb(255,255,255,0.4);
+    border-radius: 5rem;
     padding: 0 10px;
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    color: black;
 }
 ::placeholder{
-    color:#e5e5e5;
+    color:lightslategray;
 }
 
 
@@ -86,19 +87,13 @@ input {
     margin-top:10px;
     margin-bottom:27px;
     width:100%;
-    background-color:darkslategrey;
+    background-color:#71af2b;
     color:#080710;
     padding:0px 0;
     font-size:18px;
     font-weight:600;
-    border-radius:5px;
+    border-radius:50px;
     cursor:pointer;
-}
-
-@keyframes mymove {
-    50% {
-        box-shadow: 5px 5px 5px green;
-    }
 }
 
 #iconkayıt {
@@ -112,18 +107,19 @@ input {
     justify-content: center;
     margin-left: 160px;
 }
-#iconkayıt div{
-    background:yellowgreen;
-    width:50px;
-    border-radius:10px;
-    padding:5px 5px 5px 5px;
-  /*  background-color:rgba(255,255,255,0.27);*/
-    color:#eaf0fb;
-    text-align:center;
-}
+    #iconkayıt div {
+        background: #71af2b;
+        width: 50px;
+        border-radius: 1000px;
+        padding: 5px 5px 5px 5px;
+        /*  background-color:rgba(255,255,255,0.27);*/
+        color: #eaf0fb;
+        text-align: center;
+    }
 
     #iconkayıt div:hover {
         background-color: rgba(255,255,255,0.47);
+        border-radius:1000px;
     }
 
 #bodykayıt {

@@ -16,6 +16,11 @@ namespace ArmutProjesi.Controllers
         [HttpGet,AllowAnonymous]
         public IActionResult Login()//Giriş 
         {
+
+			return View();
+		}
+        public IActionResult Register()//Kayıt OL
+
             return View();
         }
 
