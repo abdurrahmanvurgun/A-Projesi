@@ -9,6 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IKullaniciDal:IGenericDal<Kullanici>
     {
-        
+        public Kullanici Find(string kullaniciAdi, string password);
     }
 }
