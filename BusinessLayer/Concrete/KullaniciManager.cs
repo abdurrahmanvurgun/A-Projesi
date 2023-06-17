@@ -43,5 +43,10 @@ namespace BusinessLayer.Concrete
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        public Kullanici KullaniciBul(string kullaniciAdi, string sifre)
+        {
+            return _kullaniciDal.Find(kullaniciAdi, sifre);
+        }
+    }
 }
