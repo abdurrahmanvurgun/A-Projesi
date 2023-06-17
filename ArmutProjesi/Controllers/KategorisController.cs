@@ -7,35 +7,41 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArmutProjesi.Data;
 using EntityLayer;
+using BusinessLayer.Concrete;
+using DataAccessLayer;
+using DataAccessLayer.EntityFramework;
+using System.Configuration;
 
 namespace ArmutProjesi.Controllers
 {
     public class KategorisController : Controller
     {
-        private readonly ArmutProjesiContext _context;
+        private readonly DatabaseContext _databaseContext;
+        private readonly KategoriManager _KategoriManager;
 
-        public KategorisController(ArmutProjesiContext context)
+        public KategorisController(DatabaseContext databaseContext)
         {
-            _context = context;
+            this._databaseContext = databaseContext;
+            this._KategoriManager = new KategoriManager(new EFKategoriRepository(this._databaseContext));
         }
 
         // GET: Kategoris
         public async Task<IActionResult> Index()
         {
-              return _context.Kategori != null ? 
-                          View(await _context.Kategori.ToListAsync()) :
+              return _databaseContext.Kategoriler != null ? 
+                          View(await _databaseContext.Kategoriler.ToListAsync()) :
                           Problem("Entity set 'ArmutProjesiContext.Kategori'  is null.");
         }
 
         // GET: Kategoris/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Kategori == null)
+            if (id == null || _databaseContext.Kategoriler == null)
             {
                 return NotFound();
             }
 
-            var kategori = await _context.Kategori
+            var kategori = await _databaseContext.Kategoriler
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (kategori == null)
             {
@@ -55,12 +61,12 @@ namespace ArmutProjesi.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,KategoriAdi")] Kategori kategori)
+        public async Task<IActionResult> Create(Kategori kategori)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(kategori);
-                await _context.SaveChangesAsync();
+                _databaseContext.Add(kategori);
+                await _databaseContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(kategori);
@@ -69,12 +75,12 @@ namespace ArmutProjesi.Controllers
         // GET: Kategoris/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Kategori == null)
+            if (id == null || _databaseContext.Kategoriler == null)
             {
                 return NotFound();
             }
 
-            var kategori = await _context.Kategori.FindAsync(id);
+            var kategori = await _databaseContext.Kategoriler.FindAsync(id);
             if (kategori == null)
             {
                 return NotFound();
@@ -97,8 +103,8 @@ namespace ArmutProjesi.Controllers
             {
                 try
                 {
-                    _context.Update(kategori);
-                    await _context.SaveChangesAsync();
+                    _databaseContext.Update(kategori);
+                    await _databaseContext.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -119,12 +125,12 @@ namespace ArmutProjesi.Controllers
         // GET: Kategoris/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Kategori == null)
+            if (id == null || _databaseContext.Kategoriler == null)
             {
                 return NotFound();
             }
 
-            var kategori = await _context.Kategori
+            var kategori = await _databaseContext.Kategoriler
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (kategori == null)
             {
@@ -139,23 +145,23 @@ namespace ArmutProjesi.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Kategori == null)
+            if (_databaseContext.Kategoriler == null)
             {
                 return Problem("Entity set 'ArmutProjesiContext.Kategori'  is null.");
             }
-            var kategori = await _context.Kategori.FindAsync(id);
+            var kategori = await _databaseContext.Kategoriler.FindAsync(id);
             if (kategori != null)
             {
-                _context.Kategori.Remove(kategori);
+                _databaseContext.Kategoriler.Remove(kategori);
             }
             
-            await _context.SaveChangesAsync();
+            await _databaseContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool KategoriExists(int id)
         {
-          return (_context.Kategori?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_databaseContext.Kategoriler?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ArmutProjesi.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly DatabaseContext _databaseContext;
@@ -16,9 +17,9 @@ namespace ArmutProjesi.Controllers
 
         public AccountController(DatabaseContext databaseContext, IConfiguration configuration)
         {
-            this._databaseContext = databaseContext;
-            this._configuration = configuration;
-            this._kullaniciManager = new KullaniciManager(new EFKullaniciRepository(this._databaseContext));
+                this._databaseContext = databaseContext;
+                this._configuration = configuration;
+                this._kullaniciManager = new KullaniciManager(new EFKullaniciRepository(this._databaseContext));
         }
 
         [HttpGet, AllowAnonymous]
@@ -52,9 +53,31 @@ namespace ArmutProjesi.Controllers
 
             return View(model);
         }
+        [HttpGet, AllowAnonymous]
         public IActionResult Register()//Kayıt OL
         {
             return View();
+        }
+        [HttpPost, AllowAnonymous]
+        public IActionResult Register(RegisterModel model)//Kayıt OL
+        {
+            if (ModelState.IsValid)
+            {
+                Kullanici newuser = new Kullanici()
+                {
+                    Ad = model.Ad,
+                    Soyad = model.Soyad,
+                    Email = model.Email,
+                    Sifre = model.Sifre,
+                    Cinsiyet = model.Cinsiyet,
+                    KullaniciAdi = model.KullaniciAdi,
+                    KayitTarihi = DateTime.Now,
+                    Aktif = false,
+                };
+               _kullaniciManager.kullaniciAdd(newuser);
+                return RedirectToAction("Profile", "Account");
+            }
+            return View(model);
         }
         public IActionResult UpdatePassword()//Şifre Yenileme ya da Şifremi Unuttum
         {
