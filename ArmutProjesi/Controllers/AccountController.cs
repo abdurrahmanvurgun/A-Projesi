@@ -10,14 +10,12 @@ namespace ArmutProjesi.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly DatabaseContext _databaseContext;
-        private readonly IConfiguration _configuration;
+        private readonly DatabaseContext _databaseContext;       
         private readonly KullaniciManager _kullaniciManager;
 
         public AccountController(DatabaseContext databaseContext, IConfiguration configuration)
         {
-            this._databaseContext = databaseContext;
-            this._configuration = configuration;
+            this._databaseContext = databaseContext;           
             this._kullaniciManager = new KullaniciManager(new EFKullaniciRepository(this._databaseContext));
         }
 
