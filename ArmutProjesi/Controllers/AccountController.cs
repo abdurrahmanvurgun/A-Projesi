@@ -11,23 +11,19 @@ namespace ArmutProjesi.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private readonly DatabaseContext _databaseContext;
-        private readonly IConfiguration _configuration;
+        private readonly DatabaseContext _databaseContext;       
         private readonly KullaniciManager _kullaniciManager;
 
         public AccountController(DatabaseContext databaseContext, IConfiguration configuration)
         {
-                this._databaseContext = databaseContext;
-                this._configuration = configuration;
-                this._kullaniciManager = new KullaniciManager(new EFKullaniciRepository(this._databaseContext));
+            this._databaseContext = databaseContext;
+            this._kullaniciManager = new KullaniciManager(new EFKullaniciRepository(this._databaseContext));
         }
-
         [HttpGet, AllowAnonymous]
         public IActionResult Login()//Giriş 
         {
             return View();
         }
-
         [HttpPost, AllowAnonymous]
         public IActionResult Login(LoginModel model)//Giriş 
         {
@@ -43,7 +39,6 @@ namespace ArmutProjesi.Controllers
                         return View(model);
                     }
                     return RedirectToAction("Profile", "Account");
-
                 }
                 else
                 {
