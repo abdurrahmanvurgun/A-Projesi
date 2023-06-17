@@ -18,13 +18,11 @@ namespace ArmutProjesi.Controllers
             this._databaseContext = databaseContext;           
             this._kullaniciManager = new KullaniciManager(new EFKullaniciRepository(this._databaseContext));
         }
-
         [HttpGet, AllowAnonymous]
         public IActionResult Login()//Giriş 
         {
             return View();
         }
-
         [HttpPost, AllowAnonymous]
         public IActionResult Login(LoginModel model)//Giriş 
         {
@@ -40,7 +38,6 @@ namespace ArmutProjesi.Controllers
                         return View(model);
                     }
                     return RedirectToAction("Profile", "Account");
-
                 }
                 else
                 {
